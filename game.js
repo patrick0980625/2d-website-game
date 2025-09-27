@@ -1,18 +1,11 @@
-import { startScene } from "./startScene.js";
-import { gameScene } from "./gameScene.js";
+import { startHouse } from "./scene/startHouse";
+import { normalHouse } from "./scene/normalHouse";
+import { world } from "./scene/world";
 
 const config = {
   type: Phaser.AUTO,
-  width: '100%',
-  height: '100%',
-  backgroundColor: "#77EE00",
-  physics: {
-    default: "arcade",
-    arcade: {
-      debug: true,
-    },
-  },
-  scene: [startScene, gameScene],
+
+  scene: [startHouse, normalHouse, world],
 };
 
 const game = new Phaser.Game(config);
