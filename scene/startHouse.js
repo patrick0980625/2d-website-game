@@ -3,6 +3,8 @@ export class startHouse extends Phaser.Scene {
     super({ key: "startHouse" });
   }
   preload() {}
-  create() {}
+  create() {
+    const mapx = (this.cameras.main.width - map.witchInPixels) / 2;
+  }
   update() {}
 }
