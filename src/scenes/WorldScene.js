@@ -1,4 +1,6 @@
 let direction = 2;
+let isAttack = false;
+let isJump = false;
 
 export default class WorldScene extends Phaser.Scene {
   constructor() {
@@ -64,7 +66,7 @@ export default class WorldScene extends Phaser.Scene {
       collision.objects.forEach(obj => {
         const x = obj.x + obj.width / 2;
         const y = obj.y + obj.height / 2;
-        const barrier = this.matter.add.rectangle(x, y, obj.width, obj.height, {
+        this.matter.add.rectangle(x, y, obj.width, obj.height, {
           isStatic: true,
           label: 'collision',
         })
@@ -85,9 +87,7 @@ export default class WorldScene extends Phaser.Scene {
 
       Object.keys(groups).forEach(n => {
         const part = groups[n];
-
         const baseY = Math.max(...part.map(p => p.y));
-
         part.forEach(p => {
           if (p.gid === 0 || !p.gid) {
             return;
@@ -110,8 +110,8 @@ export default class WorldScene extends Phaser.Scene {
               if (!this.anims.exists(animKey)) {
                 const frames = tileData.animation.map(f => ({
                   key: textureKey,
-                  frame: frame.tileid,
-                  duration: frame.duration,
+                  frame: f.tileid,
+                  duration: f.duration,
                 }));
 
                 this.anims.create({
@@ -120,6 +120,7 @@ export default class WorldScene extends Phaser.Scene {
                   repeat: -1,
                 })
               }
+              sprite.play(animKey);
             }
 
             if (p.properties) {
@@ -131,14 +132,12 @@ export default class WorldScene extends Phaser.Scene {
           }
         })
       })
-
     }
-
 
     // create player
     const spawn = this.teleportPoints.get(this.spawnPointName) || {x: 100, y: 100};
     this.player = this.matter.add.sprite(spawn.x, spawn.y, 'player');
-    this.player.setOrigin(0, 0);
+    this.player.setOrigin(0.5, 0.5);
     this.player.setRectangle(10, 4, {
       render: {sprite: {xOffset: -0.005, yOffset: 0.1}},
       label: 'player',
@@ -178,6 +177,13 @@ export default class WorldScene extends Phaser.Scene {
     // control
     this.cursors = this.input.keyboard.createCursorKeys();
     this.keyE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
+    this.key1 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
+    this.key2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TWO);
+    this.key3 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.THREE);
+    this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
+    this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+    this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+    this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 
     // anim
     const animations = [
@@ -189,33 +195,47 @@ export default class WorldScene extends Phaser.Scene {
       ["walk", "side", 4, 6],
       ["walk", "up", 5, 6],
 
-      ["collapse", null, 6, 4],
+      ["attack_1", "down", 6, 4],
+      ["attack_2", "down", 7, 4],
+      ["attack_3", "down", 8, 4],
+      ["attack_1", "side", 9, 4],
+      ["attack_2", "side", 10, 4],
+      ["attack_3", "side", 11, 4],
+      ["attack_1", "up", 12, 4],
+      ["attack_2", "up", 13, 4],
+      ["attack_3", "up", 14, 4],
 
-      ["climb_ladder", null, 7, 6],
+      ["collapse", null, 15, 4],
 
-      ["dodge", "down", 8, 8],
-      ["dodge", "side", 9, 8],
-      ["dodge", "up", 10, 8],
+      ["climb_ladder", null, 16, 6],
 
-      ["jump", "down", 11, 6],
-      ["jump", "side", 12, 6],
-      ["jump", "up", 13, 6],
+      ["dodge", "down", 17, 8],
+      ["dodge", "side", 18, 8],
+      ["dodge", "up", 19, 8],
 
-      ["tool_axe", "down", 14, 6],
-      ["tool_axe", "side", 15, 6],
-      ["tool_axe", "up", 16, 6],
+      ["jump", "down", 20, 6],
+      ["jump", "side", 21, 6],
+      ["jump", "up", 22, 6],
 
-      ["tool_pickaxe", "down", 17, 6],
-      ["tool_pickaxe", "side", 18, 6],
-      ["tool_pickaxe", "up", 19, 6],
+      ["weapon_bow", "down", 23, 6],
+      ["weapon_bow", "side", 24, 6],
+      ["weapon_bow", "up", 25, 6],
 
-      ["tool_hoe", "down", 20, 6],
-      ["tool_hoe", "side", 21, 6],
-      ["tool_hoe", "up", 22, 6],
+      ["tool_axe", "down", 26, 6],
+      ["tool_axe", "side", 27, 6],
+      ["tool_axe", "up", 28, 6],
 
-      ["tool_watercan", "down", 23, 6],
-      ["tool_watercan", "side", 24, 6],
-      ["tool_watercan", "up", 25, 6],
+      ["tool_pickaxe", "down", 29, 6],
+      ["tool_pickaxe", "side", 30, 6],
+      ["tool_pickaxe", "up", 31, 6],
+
+      ["tool_hoe", "down", 32, 6],
+      ["tool_hoe", "side", 33, 6],
+      ["tool_hoe", "up", 34, 6],
+
+      ["tool_watercan", "down", 35, 6],
+      ["tool_watercan", "side", 36, 6],
+      ["tool_watercan", "up", 37, 6],
     ];
     animations.forEach(config => {
       const [action, direction, row, frameCount] = config;
@@ -228,19 +248,21 @@ export default class WorldScene extends Phaser.Scene {
             end: row * 8 + frameCount - 1,
           }),
           frameRate: 10,
-          repeat: -1,
+          repeat: 0,
         })
       }
     })
-    if (this.animatedTiles) {
-      this.animatedTiles.init(map);
-      this.animatedTiles.setRate(0.50);
-    }
 
     // create ground
     const ground = map.createLayer('ground', tilesetObjects, 0, 0);
     if (ground) {
-      ground.setDepth(0);
+      ground.setDepth(-1);
+    }
+
+    // create aboveGround
+    const aboveGround = map.createLayer('aboveGround', tilesetObjects, 0);
+    if (aboveGround) {
+      aboveGround.setDepth(0);
     }
 
     // create shadow
@@ -250,11 +272,30 @@ export default class WorldScene extends Phaser.Scene {
     }
 
     // cameras
-    this.cameras.main.setZoom(5);
-    this.cameras.main.centerOn(map.widthInPixels / 2, map.heightInPixels / 2);
-    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-    this.cameras.main.startFollow(this.player);
-    this.cameras.main.roundPixels = true;
+    const setupCamera = () => {
+      const {width, height} = this.scale;
+      const mapWidth = map.widthInPixels;
+      const mapHeight = map.heightInPixels;
+      let zoom = (this.scale.width > 800 && this.scale.height > 600) ? 5 : 3;
+      const displayWidth = mapWidth * zoom;
+      const displayHeight = mapHeight * zoom;
+      const boundsW = Math.max(mapWidth, width / zoom);
+      const boundsH = Math.max(mapHeight, height / zoom);
+      const offsetX = displayWidth < width ? (width / zoom - mapWidth) / 2 : 0;
+      const offsetY = displayHeight < height ? (height / zoom - mapHeight) / 2 : 0;
+
+      this.cameras.main.setBounds(-offsetX, -offsetY, boundsW, boundsH);
+      this.cameras.main.startFollow(this.player, true);
+
+      if (displayWidth < width && displayHeight < height) {
+        this.cameras.main.centerOn(mapWidth / 2, mapHeight / 2);
+      }
+
+      this.cameras.main.setZoom(zoom);
+      this.cameras.main.roundPixels = true;
+    }
+    setupCamera();
+    this.scale.on('resize', setupCamera);
   }
 
   update(time, delta) {
@@ -263,59 +304,148 @@ export default class WorldScene extends Phaser.Scene {
     }
     this.player.setDepth(this.player.y + 5);
 
-    const speed = 1;
+
+    let speed = 1;
     let vx = 0;
     let vy = 0;
 
-    if (this.cursors.left.isDown) {
-      direction = 3;
-      this.player.flipX = true;
-      vx = -speed;
-      if (this.player.body.velocity.y === 0) {
-        this.player.anims.play('walk-side', true);
-      }
-    } else if (this.cursors.right.isDown) {
-      direction = 1;
-      this.player.flipX = false;
-      vx = speed;
-      if (this.player.body.velocity.y === 0) {
-        this.player.anims.play('walk-side', true);
-      }
+    if (this.cursors.shift.isDown) {
+      speed = 1.75;
     }
 
-    if (this.cursors.up.isDown) {
-      direction = 0;
-      vy = -speed;
-      this.player.anims.play('walk-up', true);
-    } else if (this.cursors.down.isDown) {
-      direction = 2;
-      vy = speed;
-      this.player.anims.play('walk-down', true);
-    }
-    if (vx !== 0 && vy !== 0) {
-      vx /= Math.sqrt(2);
-      vy /= Math.sqrt(2);
-    }
-    this.player.setVelocity(vx, vy);
-
-    if (this.player.body.velocity.x === 0 && this.player.body.velocity.y === 0) {
-      this.player.anims.stop();
-      if (direction === 0) {
-        this.player.setFrame(16);
-      } else if (direction === 1) {
-        this.player.setFrame(8);
-      } else if (direction === 2) {
-        this.player.setFrame(0);
-      } else {
-        this.player.setFrame(8);
-      }
-    }
-
+    // keyE: door
     if (Phaser.Input.Keyboard.JustDown(this.keyE)) {
       if (this.activePortal) {
         const data = this.activePortal.portalData;
         if (data.is_door) {
           this.changeScene(data);
+        }
+      }
+    }
+
+    // key Attack
+    if (!isJump) {
+      // key1: attack_1
+      if (Phaser.Input.Keyboard.JustDown(this.key1)) {
+        isAttack = true;
+        this.player.setVelocity(0, 0);
+        if (direction === 0) {
+          this.player.flipX = false;
+          this.player.anims.play('attack_1-up', true);
+        } else if (direction === 1 || direction === 3) {
+          this.player.anims.play('attack_1-side', true);
+        } else {
+          this.player.flipX = false;
+          this.player.anims.play('attack_1-down', true);
+        }
+
+        this.player.once('animationcomplete', () => {
+          isAttack = false;
+        })
+      }
+
+      // key2: attack_2
+      if (Phaser.Input.Keyboard.JustDown(this.key2)) {
+        isAttack = true;
+        this.player.setVelocity(0, 0);
+        if (direction === 0) {
+          this.player.flipX = false;
+          this.player.anims.play('attack_2-up', true);
+        } else if (direction === 1 || direction === 3) {
+          this.player.anims.play('attack_2-side', true);
+        } else {
+          this.player.flipX = false;
+          this.player.anims.play('attack_2-down', true);
+        }
+
+        this.player.once('animationcomplete', () => {
+          isAttack = false;
+        })
+      }
+
+      // key3: attack_3
+      if (Phaser.Input.Keyboard.JustDown(this.key3)) {
+        isAttack = true;
+        this.player.setVelocity(0, 0);
+        if (direction === 0) {
+          this.player.flipX = false;
+          this.player.anims.play('attack_3-up', true);
+        } else if (direction === 1 || direction === 3) {
+          this.player.anims.play('attack_3-side', true);
+        } else {
+          this.player.flipX = false;
+          this.player.anims.play('attack_3-down', true);
+        }
+
+        this.player.once('animationcomplete', () => {
+          isAttack = false;
+        })
+      }
+    }
+
+    // keySPACE: jump
+    if (!isAttack) {
+      if (Phaser.Input.Keyboard.JustDown(this.cursors.space)) {
+        isJump = true;
+        if (direction === 0) {
+          this.player.flipX = false;
+          this.player.anims.play('jump-up', true);
+        } else if (direction === 1 || direction === 3) {
+          this.player.anims.play('jump-side', true);
+        } else {
+          this.player.flipX = false;
+          this.player.anims.play('jump-down', true);
+        }
+
+        this.player.once('animationcomplete', () => {
+          isJump = false;
+        })
+      }
+    }
+
+    // move
+    if (!isAttack && !isJump) {
+      if (this.cursors.left.isDown || this.keyA.isDown) {
+        direction = 3;
+        this.player.flipX = true;
+        vx = -speed;
+        if (this.player.body.velocity.y === 0) {
+          this.player.anims.play('walk-side', true);
+        }
+      } else if (this.cursors.right.isDown || this.keyD.isDown) {
+        direction = 1;
+        this.player.flipX = false;
+        vx = speed;
+        if (this.player.body.velocity.y === 0) {
+          this.player.anims.play('walk-side', true);
+        }
+      }
+
+      if (this.cursors.up.isDown || this.keyW.isDown) {
+        direction = 0;
+        vy = -speed;
+        this.player.flipX = false;
+        this.player.anims.play('walk-up', true);
+      } else if (this.cursors.down.isDown || this.keyS.isDown) {
+        direction = 2;
+        vy = speed;
+        this.player.flipX = false;
+        this.player.anims.play('walk-down', true);
+      }
+      if (vx !== 0 && vy !== 0) {
+        vx /= Math.sqrt(2);
+        vy /= Math.sqrt(2);
+      }
+      this.player.setVelocity(vx, vy);
+
+      if (this.player.body.velocity.x === 0 && this.player.body.velocity.y === 0) {
+        this.player.anims.stop();
+        if (direction === 0) {
+          this.player.setFrame(16);
+        } else if (direction === 1 || direction === 3) {
+          this.player.setFrame(8);
+        } else {
+          this.player.setFrame(0);
         }
       }
     }

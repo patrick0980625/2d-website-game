@@ -1,0 +1,379 @@
+{
+  "tiles": [
+    {
+      "key": "img_anvil_anim",
+      "path": "Anvil_Anim.png",
+      "tiledName": "ts_anvil_anim"
+    },
+    {
+      "key": "img_beach",
+      "path": "Beach_Tiles.png",
+      "tiledName": "ts_beach"
+    },
+    {
+      "key": "img_beach_decor",
+      "path": "Beach_Decor_Tiles.png",
+      "tiledName": "ts_beach_decor"
+    },
+    {
+      "key": "img_bed",
+      "path": "Beds.png",
+      "tiledName": "ts_bed"
+    },
+    {
+      "key": "img_bench",
+      "path": "Benches.png",
+      "tiledName": "ts_bench"
+    },
+    {
+      "key": "img_birch_tree_b",
+      "path": "Big_Birch_Tree.png",
+      "tiledName": "ts_birch_tree_b"
+    },
+    {
+      "key": "img_boat",
+      "path": "Boat.png",
+      "tiledName": "ts_boat"
+    },
+    {
+      "key": "img_bookshelf",
+      "path": "BookShelves.png",
+      "tiledName": "ts_bookshelf"
+    },
+    {
+      "key": "img_branch_water_anim",
+      "path": "Branch_Water_Anim.png",
+      "tiledName": "ts_branch_water_anim"
+    },
+    {
+      "key": "img_bridge_w",
+      "path": "Bridge_Wood_1.png",
+      "tiledName": "ts_bridge_w"
+    },
+    {
+      "key": "img_cattail_anim_1",
+      "path": "Cattail_1_Anim.png",
+      "tiledName": "ts_cattail_anim_1"
+    },
+    {
+      "key": "img_chair",
+      "path": "Chairs.png",
+      "tiledName": "ts_chair"
+    },
+    {
+      "key": "img_crops",
+      "path": "Crops.png",
+      "tiledName": "ts_crops"
+    },
+    {
+      "key": "img_drawer",
+      "path": "Drawers.png",
+      "tiledName": "ts_drawer"
+    },
+    {
+      "key": "img_farmland_d",
+      "path": "Farmland_Tile.png",
+      "tiledName": "ts_farmland_d"
+    },
+    {
+      "key": "img_farmland_w",
+      "path": "FarmLand_Wet_Tile.png",
+      "tiledName": "ts_farmland_w"
+    },
+    {
+      "key": "img_fences",
+      "path": "Fences.png",
+      "tiledName": "ts_fences"
+    },
+    {
+      "key": "img_flower_anim_1",
+      "path": "Flowers_1_Anim.png",
+      "tiledName": "ts_flower_anim_1"
+    },
+    {
+      "key": "img_flower_anim_2",
+      "path": "Flowers_2_Anim.png",
+      "tiledName": "ts_flower_anim_2"
+    },
+    {
+      "key": "img_flower_anim_3",
+      "path": "Flowers_3_Anim.png",
+      "tiledName": "ts_flower_anim_3"
+    },
+    {
+      "key": "img_flower_anim_4",
+      "path": "Flowers_4_Anim.png",
+      "tiledName": "ts_flower_anim_4"
+    },
+    {
+      "key": "img_flower_anim_5",
+      "path": "Flowers_5_Anim.png",
+      "tiledName": "ts_flower_anim_5"
+    },
+    {
+      "key": "img_flower_grass_anim_1",
+      "path": "Flower_Grass_1_Anim.png",
+      "tiledName": "ts_flower_grass_anim_1"
+    },
+    {
+      "key": "img_flower_grass_anim_2",
+      "path": "Flower_Grass_2_Anim.png",
+      "tiledName": "ts_flower_grass_anim_2"
+    },
+    {
+      "key": "img_fountain_anim",
+      "path": "Fountain_Anim.png",
+      "tiledName": "ts_fountain_anim"
+    },
+    {
+      "key": "img_fruit_tree_b",
+      "path": "Big_Fruit_Tree.png",
+      "tiledName": "ts_fruit_tree_b"
+    },
+    {
+      "key": "img_furnace_anim",
+      "path": "Furnace_Anim.png",
+      "tiledName": "ts_furnace_anim"
+    },
+    {
+      "key": "img_grass",
+      "path": "Grass_Tiles_1.png",
+      "tiledName": "ts_grass"
+    },
+    {
+      "key": "img_grass_anim_1",
+      "path": "Grass_1_Anim.png",
+      "tiledName": "ts_grass_anim_1"
+    },
+    {
+      "key": "img_grass_anim_2",
+      "path": "Grass_2_Anim.png",
+      "tiledName": "ts_grass_anim_2"
+    },
+    {
+      "key": "img_grass_anim_3",
+      "path": "Grass_3_Anim.png",
+      "tiledName": "ts_grass_anim_3"
+    },
+    {
+      "key": "img_grass_m",
+      "path": "Grass_1_Middle.png",
+      "tiledName": "ts_grass_m"
+    },
+    {
+      "key": "img_hedge",
+      "path": "Hedge_Tiles.png",
+      "tiledName": "ts_hedge"
+    },
+    {
+      "key": "img_house_black",
+      "path": "House_1_Limestone_Base_Black.png",
+      "tiledName": "ts_house_black"
+    },
+    {
+      "key": "img_house_black_b",
+      "path": "House_5_Limestone_Base_Black.png",
+      "tiledName": "ts_house_black_b"
+    },
+    {
+      "key": "img_house_black_s",
+      "path": "House_4_Limestone_Base_Black.png",
+      "tiledName": "ts_house_black_s"
+    },
+    {
+      "key": "img_house_blue",
+      "path": "House_1_Limestone_Base_Blue.png",
+      "tiledName": "ts_house_blue"
+    },
+    {
+      "key": "img_house_blue_b",
+      "path": "House_5_Limestone_Base_Blue.png",
+      "tiledName": "ts_house_blue_b"
+    },
+    {
+      "key": "img_house_blue_s",
+      "path": "House_4_Limestone_Base_Blue.png",
+      "tiledName": "ts_house_blue_s"
+    },
+    {
+      "key": "img_house_red",
+      "path": "House_1_Limestone_Base_Red.png",
+      "tiledName": "ts_house_red"
+    },
+    {
+      "key": "img_house_red_b",
+      "path": "House_5_Limestone_Base_Red.png",
+      "tiledName": "ts_house_red_b"
+    },
+    {
+      "key": "img_house_red_s",
+      "path": "House_4_Limestone_Base_Red.png",
+      "tiledName": "ts_house_red_s"
+    },
+    {
+      "key": "img_indoor_decor",
+      "path": "Indoor_Decor.png",
+      "tiledName": "ts_indoor_decor"
+    },
+    {
+      "key": "img_indoor_wall",
+      "path": "Interior_Walls.png",
+      "tiledName": "ts_indoor_wall"
+    },
+    {
+      "key": "img_lamps",
+      "path": "Standing_Lamps.png",
+      "tiledName": "ts_lamps"
+    },
+    {
+      "key": "img_lantern",
+      "path": "Lanter_Posts.png",
+      "tiledName": "ts_lantern"
+    },
+    {
+      "key": "img_lillypad_1",
+      "path": "Lillypad_Purple_6_Anim.png",
+      "tiledName": "ts_lillypad_1"
+    },
+    {
+      "key": "img_lillypad_2",
+      "path": "Lillypad_Green_5_Anim.png",
+      "tiledName": "ts_lillypad_2"
+    },
+    {
+      "key": "img_log_water_anim",
+      "path": "Log_1_Water_Anim.png",
+      "tiledName": "ts_log_water_anim"
+    },
+    {
+      "key": "img_oak_tree_m",
+      "path": "Medium_Oak_Tree.png",
+      "tiledName": "ts_oak_tree_m"
+    },
+    {
+      "key": "img_outdoor_decor",
+      "path": "Outdoor_Decor.png",
+      "tiledName": "ts_outdoor_decor"
+    },
+    {
+      "key": "img_path_decor",
+      "path": "Path_Decoration.png",
+      "tiledName": "ts_path_decor"
+    },
+    {
+      "key": "img_path_m",
+      "path": "Path_Middle.png",
+      "tiledName": "ts_path_m"
+    },
+    {
+      "key": "img_pavement",
+      "path": "Pavement_Tiles.png",
+      "tiledName": "ts_pavement"
+    },
+    {
+      "key": "img_picnic_blanket",
+      "path": "Picnic_Blankets.png",
+      "tiledName": "ts_picnic_blanket"
+    },
+    {
+      "key": "img_placeable_deco",
+      "path": "Placeable_Decoration.png",
+      "tiledName": "ts_placeable_deco"
+    },
+    {
+      "key": "img_scarecrow",
+      "path": "Scarecrows.png",
+      "tiledName": "ts_scarecrow"
+    },
+    {
+      "key": "img_sign",
+      "path": "Signs.png",
+      "tiledName": "ts_sign"
+    },
+    {
+      "key": "img_table",
+      "path": "Tables.png",
+      "tiledName": "ts_table"
+    },
+    {
+      "key": "img_water_anim",
+      "path": "Water_Tile_1_Anim.png",
+      "tiledName": "ts_water_anim"
+    },
+    {
+      "key": "img_water_foam_anim",
+      "path": "Water_Foam_Animation.png",
+      "tiledName": "ts_water_foam_anim"
+    },
+    {
+      "key": "img_water_m",
+      "path": "Water_Middle.png",
+      "tiledName": "ts_water_m"
+    },
+    {
+      "key": "img_water_m_anim_1",
+      "path": "Water_Middle_Anim_1.png",
+      "tiledName": "ts_water_m_anim_1"
+    },
+    {
+      "key": "img_water_m_anim_2",
+      "path": "Water_Middle_Anim_2.png",
+      "tiledName": "ts_water_m_anim_2"
+    },
+    {
+      "key": "img_water_rock_anim_3",
+      "path": "Rock_3_Water_Anim.png",
+      "tiledName": "ts_water_rock_anim_3"
+    },
+    {
+      "key": "img_water_rock_anim_4",
+      "path": "Rock_4_Water_Anim.png",
+      "tiledName": "ts_water_rock_anim_4"
+    },
+    {
+      "key": "img_water_rock_anim_10",
+      "path": "Rock_10_Water_Anim.png",
+      "tiledName": "ts_water_rock_anim_10"
+    },
+    {
+      "key": "img_window_d",
+      "path": "Windows_Double.png",
+      "tiledName": "ts_window_d"
+    },
+    {
+      "key": "img_wood_floor",
+      "path": "Wood_Floor_TIles.png",
+      "tiledName": "ts_wood_floor"
+    }
+  ],
+  "maps": [
+    {
+      "key": "initial_map_data",
+      "path": "initial_map.json"
+    },
+    {
+      "key": "initial_room_data",
+      "path": "initial_room.json"
+    },
+    {
+      "key": "village_data",
+      "path": "village.json"
+    },
+    {
+      "key": "dock_data",
+      "path": "dock.json"
+    },
+    {
+      "key": "normal_room_1_data",
+      "path": "normal_room_1.json"
+    },
+    {
+      "key": "normal_room_2_data",
+      "path": "normal_room_2.json"
+    },
+    {
+      "key": "normal_room_3_data",
+      "path": "normal_room_3.json"
+    }
+  ]
+}
