@@ -6,6 +6,11 @@
       "tiledName": "ts_anvil_anim"
     },
     {
+      "key": "img_apple_tree",
+      "path": "Apple_Tree.png",
+      "tiledName": "ts_apple_tree"
+    },
+    {
       "key": "img_beach",
       "path": "Beach_Tiles.png",
       "tiledName": "ts_beach"
@@ -29,6 +34,16 @@
       "key": "img_birch_tree_b",
       "path": "Big_Birch_Tree.png",
       "tiledName": "ts_birch_tree_b"
+    },
+    {
+      "key": "img_birch_tree_m",
+      "path": "Medium_Birch_Tree.png",
+      "tiledName": "ts_birch_tree_m"
+    },
+    {
+      "key": "img_birch_tree_s",
+      "path": "Small_Birch_Tree.png",
+      "tiledName": "ts_birch_tree_s"
     },
     {
       "key": "img_boat",
@@ -59,6 +74,11 @@
       "key": "img_chair",
       "path": "Chairs.png",
       "tiledName": "ts_chair"
+    },
+    {
+      "key": "img_cliff_4",
+      "path": "Stone_Cliff_4_Tile.png",
+      "tiledName": "ts_cliff_4"
     },
     {
       "key": "img_crops",
@@ -116,9 +136,24 @@
       "tiledName": "ts_flower_grass_anim_1"
     },
     {
+      "key": "img_flower_grass_anim_15",
+      "path": "Flower_Grass_15_Anim.png",
+      "tiledName": "ts_flower_grass_anim_15"
+    },
+    {
       "key": "img_flower_grass_anim_2",
       "path": "Flower_Grass_2_Anim.png",
       "tiledName": "ts_flower_grass_anim_2"
+    },
+    {
+      "key": "img_flower_grass_anim_8",
+      "path": "Flower_Grass_8_Anim.png",
+      "tiledName": "ts_flower_grass_anim_8"
+    },
+    {
+      "key": "img_flower_grass_anim_9",
+      "path": "Flower_Grass_9_Anim.png",
+      "tiledName": "ts_flower_grass_anim_9"
     },
     {
       "key": "img_fountain_anim",
@@ -131,6 +166,16 @@
       "tiledName": "ts_fruit_tree_b"
     },
     {
+      "key": "img_fruit_tree_m",
+      "path": "Medium_Fruit_Tree.png",
+      "tiledName": "ts_fruit_tree_m"
+    },
+    {
+      "key": "img_fruit_tree_s",
+      "path": "Small_Fruit_Tree.png",
+      "tiledName": "ts_fruit_tree_s"
+    },
+    {
       "key": "img_furnace_anim",
       "path": "Furnace_Anim.png",
       "tiledName": "ts_furnace_anim"
@@ -139,6 +184,11 @@
       "key": "img_grass",
       "path": "Grass_Tiles_1.png",
       "tiledName": "ts_grass"
+    },
+    {
+      "key": "img_grass_4",
+      "path": "Grass_Tiles_4.png",
+      "tiledName": "ts_grass_4"
     },
     {
       "key": "img_grass_anim_1",
@@ -159,6 +209,11 @@
       "key": "img_grass_m",
       "path": "Grass_1_Middle.png",
       "tiledName": "ts_grass_m"
+    },
+    {
+      "key": "img_grass_m_4",
+      "path": "Grass_4_Middle.png",
+      "tiledName": "ts_grass_m_4"
     },
     {
       "key": "img_hedge",
@@ -246,9 +301,34 @@
       "tiledName": "ts_log_water_anim"
     },
     {
+      "key": "img_log_water_anim_2",
+      "path": "Log_2_Water_Anim.png",
+      "tiledName": "ts_log_water_anim_2"
+    },
+    {
+      "key": "img_muschroom_anim_1",
+      "path": "muschroom_1_Anim.png",
+      "tiledName": "ts_muschroom_anim_1"
+    },
+    {
+      "key": "img_muschroom_anim_7",
+      "path": "muschroom_7_Anim.png",
+      "tiledName": "ts_muschroom_anim_7"
+    },
+    {
+      "key": "img_oak_tree_b",
+      "path": "Big_Oak_Tree.png",
+      "tiledName": "ts_oak_tree_b"
+    },
+    {
       "key": "img_oak_tree_m",
       "path": "Medium_Oak_Tree.png",
       "tiledName": "ts_oak_tree_m"
+    },
+    {
+      "key": "img_oak_tree_s",
+      "path": "Small_Oak_Tree.png",
+      "tiledName": "ts_oak_tree_s"
     },
     {
       "key": "img_outdoor_decor",
@@ -271,6 +351,11 @@
       "tiledName": "ts_pavement"
     },
     {
+      "key": "img_peach_tree",
+      "path": "Peach_Tree.png",
+      "tiledName": "ts_peach_tree"
+    },
+    {
       "key": "img_picnic_blanket",
       "path": "Picnic_Blankets.png",
       "tiledName": "ts_picnic_blanket"
@@ -279,6 +364,11 @@
       "key": "img_placeable_deco",
       "path": "Placeable_Decoration.png",
       "tiledName": "ts_placeable_deco"
+    },
+    {
+      "key": "img_rock_anim_13",
+      "path": "Rock_13_Anim.png",
+      "tiledName": "ts_rock_anim_13"
     },
     {
       "key": "img_scarecrow",
@@ -291,6 +381,21 @@
       "tiledName": "ts_sign"
     },
     {
+      "key": "img_spruce_tree_b",
+      "path": "Big_Spruce_tree.png",
+      "tiledName": "ts_spruce_tree_b"
+    },
+    {
+      "key": "img_spruce_tree_m",
+      "path": "Medium_Spruce_tree.png",
+      "tiledName": "ts_spruce_tree_m"
+    },
+    {
+      "key": "img_spruce_tree_s",
+      "path": "Small_Spruce_tree.png",
+      "tiledName": "ts_spruce_tree_s"
+    },
+    {
       "key": "img_table",
       "path": "Tables.png",
       "tiledName": "ts_table"
@@ -301,9 +406,24 @@
       "tiledName": "ts_water_anim"
     },
     {
+      "key": "img_water_anim_4",
+      "path": "Water_Tile_4_Anim.png",
+      "tiledName": "ts_water_anim_4"
+    },
+    {
+      "key": "img_waterfall_anim_4",
+      "path": "Waterfall_8.png",
+      "tiledName": "ts_waterfall_anim_4"
+    },
+    {
       "key": "img_water_foam_anim",
       "path": "Water_Foam_Animation.png",
       "tiledName": "ts_water_foam_anim"
+    },
+    {
+      "key": "img_water_grass_anim",
+      "path": "Water_Grass_1_Anim.png",
+      "tiledName": "ts_water_grass_anim"
     },
     {
       "key": "img_water_m",
@@ -331,6 +451,11 @@
       "tiledName": "ts_water_rock_anim_4"
     },
     {
+      "key": "img_water_rock_anim_8",
+      "path": "Rock_8_Water_Anim.png",
+      "tiledName": "ts_water_rock_anim_8"
+    },
+    {
       "key": "img_water_rock_anim_10",
       "path": "Rock_10_Water_Anim.png",
       "tiledName": "ts_water_rock_anim_10"
@@ -339,6 +464,11 @@
       "key": "img_window_d",
       "path": "Windows_Double.png",
       "tiledName": "ts_window_d"
+    },
+    {
+      "key": "img_window_s",
+      "path": "Windows_Single.png",
+      "tiledName": "ts_window_s"
     },
     {
       "key": "img_wood_floor",
@@ -374,6 +504,14 @@
     {
       "key": "normal_room_3_data",
       "path": "normal_room_3.json"
+    },
+    {
+      "key": "village_office_data",
+      "path": "village_office.json"
+    },
+    {
+      "key": "forest_data",
+      "path": "forest.json"
     }
   ]
 }

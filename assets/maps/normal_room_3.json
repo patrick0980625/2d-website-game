@@ -611,7 +611,7 @@
                  "y":64
                 }, 
                 {
-                 "height":1,
+                 "height":4,
                  "id":6,
                  "name":"",
                  "rotation":0,
@@ -619,7 +619,7 @@
                  "visible":true,
                  "width":32,
                  "x":64,
-                 "y":239
+                 "y":236
                 }, 
                 {
                  "height":23,
@@ -796,11 +796,22 @@
         }, 
         {
          "draworder":"topdown",
+         "id":7,
+         "name":"enemy",
+         "objects":[],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":6,
          "name":"teleport",
          "objects":[
                 {
-                 "height":15,
+                 "height":12,
                  "id":7,
                  "name":"to_village",
                  "properties":[
@@ -844,7 +855,7 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":7,
+ "nextlayerid":8,
  "nextobjectid":99,
  "orientation":"orthogonal",
  "renderorder":"right-down",
