@@ -24,19 +24,32 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     this.direction = 2;
     this.currentState = STATE.IDLE;
 
-    this.hp = 10;
+    this.hp = 20;
+    this.maxHp = 20;
     this.isDead = false;
     this.combo = 1;
     this.lastAttack = 0
     this.comboTimeout = 1000;
     this.isInvulnerable = false;
-    this.attackDamage = this.combo === 3 ? 2 : 1;
+    this.lastDamageTime = 0;
+    this.recoveryRate = 2000;
+    this.lastRecoveryTime = 0;
+    this.recoveryDelay = 10000;
+    this.recoveryAmount = 2;
 
     this.cursors = scene.input.keyboard.createCursorKeys();
     this.keyWASD = scene.input.keyboard.addKeys('W,A,S,D');
-    this.keyR = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
-    this.keyCTRL = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.CTRL);
     this.keyE = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
+
+    this.scene.input.on('pointerdown', (p) => {
+      if (!this.isDead) {
+        if (p.leftButtonDown()) {
+          this.comboAttack();
+        } else if (p.rightButtonDown()) {
+          this.startAction(STATE.DODGE);
+        }
+      }
+    })
   }
 
   static createAnimations(scene) {
@@ -132,17 +145,10 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
       case STATE.DODGE:
         break;
     }
+    this.recovery();
   }
 
   handleActionInput() {
-    if (Phaser.Input.Keyboard.JustDown(this.keyR)) {
-      this.comboAttack();
-      return true;
-    }
-    if (Phaser.Input.Keyboard.JustDown(this.keyCTRL)) {
-      this.startAction(STATE.DODGE);
-      return true;
-    }
     if (Phaser.Input.Keyboard.JustDown(this.cursors.space)) {
       this.startAction(STATE.JUMP);
       return true;
@@ -172,7 +178,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
       this.off('animationupdate');
       this.on('animationupdate', (anim, frame) => {
         if (anim.key.includes('attack') && frame.index === 2) {
-          this.checkAttack();
+          this.checkAttack(num);
         }
       })
     } else if (state === STATE.DODGE) {
@@ -194,6 +200,27 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   comboAttack() {
     const now = this.scene.time.now;
 
+    const pointer = this.scene.input.activePointer;
+    const mouseX = pointer.worldX;
+    const mouseY = pointer.worldY;
+
+    const angle = Phaser.Math.Angle.Between(this.x, this.y, mouseX, mouseY);
+    const degrees = Phaser.Math.RadToDeg(angle);
+
+    if (degrees > -45 && degrees <= 45) {
+      this.direction = 1;
+      this.flipX = false;
+    } else if (degrees > 45 && degrees <= 135) {
+      this.direction = 2;
+      this.flipX = false;
+    } else if (degrees > 135 || degrees <= -135) {
+      this.direction = 3;
+      this.flipX = true;
+    } else {
+      this.direction = 0;
+      this.flipX = false;
+    }
+
     if (now - this.lastAttack > this.comboTimeout) {
       this.combo = 1;
     }
@@ -205,7 +232,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     }
   }
 
-  checkAttack() {
+  checkAttack(num) {
     const attackRange = 25;
 
     if (this.scene.enemies) {
@@ -216,7 +243,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
 
         const d = Phaser.Math.Distance.Between(this.x, this.y, e.x, e.y);
         if (d < attackRange) {
-          const damage = this.attackDamage;
+          const damage = num === 3 ? 2 : 1;
           e.takeDamage(damage, this);
         }
       })
@@ -224,7 +251,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   }
 
   movement() {
-    let speed = this.cursors.shift.isDown ? 1.5 : 1;
+    let speed = this.cursors.shift.isDown ? 1.3 : 1;
     let vx = 0;
     let vy = 0;
 
@@ -329,8 +356,10 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     }
 
     this.hp -= amount;
+    this.lastDamageTime = this.scene.time.now;
     this.setTint(0xff0000);
     this.scene.time.delayedCall(200, () => this.clearTint());
+    this.scene.events.emit('player-hp-changed', this.hp, this.maxHp);
 
     if (this.hp <= 0) {
       this.die();
@@ -340,6 +369,23 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   die() {
     this.isDead = true;
     this.setVelocity(0, 0);
+    this.setSensor(true);
     this.anims.play('collapse', true);
+    this.setTint(0xff0000);
+    this.scene.events.emit('player-die');
+  }
+
+  recovery() {
+    const now = this.scene.time.now;
+
+    if (!this.isDead && this.hp < this.maxHp && now - this.lastDamageTime > this.recoveryDelay) {
+      if (now - this.lastRecoveryTime > this.recoveryRate) {
+        this.hp = Math.min(this.maxHp, this.hp + this.recoveryAmount);
+        this.lastRecoveryTime = now;
+        this.scene.events.emit('player-hp-changed', this.hp, this.maxHp);
+        this.setTint(0x00ff00);
+        this.scene.time.delayedCall(200, () => this.clearTint());
+      }
+    }
   }
 }

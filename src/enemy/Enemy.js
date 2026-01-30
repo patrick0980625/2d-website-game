@@ -10,6 +10,8 @@ export default class Enemy extends Phaser.Physics.Matter.Sprite {
     this.isHurt = false;
     this.scene = scene;
     this.lastAttackTime = 0;
+    this.spawnX = this.x;
+    this.spawnY = this.y;
 
     this.initHealthBar();
   }
@@ -143,5 +145,24 @@ export default class Enemy extends Phaser.Physics.Matter.Sprite {
       this.direction = dy > 0 ? 2 : 0;
       this.setFlipX(false);
     }
+  }
+
+  stopMovement() {
+    if (!this.active || this.isDead) {
+      return;
+    }
+
+    this.setVelocity(0, 0);
+    this.hp = this.maxHp;
+    this.x = this.spawnX;
+    this.y = this.spawnY;
+
+    this.isHurt = false;
+    this.clearTint();
+    this.updateHealthBar();
+
+    const dirNames = {0: 'up', 1: 'side', 2: 'down', 3: 'side'};
+    const dir = dirNames[this.direction] || 'down';
+    this.anims.play(`${this.texture.key}-idle-${dir}`, true);
   }
 }

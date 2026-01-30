@@ -1,7 +1,17 @@
 import Player from '../player/Player.js';
 import GoblinArcher from "../enemy/GoblinArcher.js";
 import GoblinThief from "../enemy/GoblinThief.js";
+import GoblinMaceman from "../enemy/GoblinMaceman.js";
+import OrcChief from "../enemy/OrcChief.js";
 import Slime from "../enemy/Slime.js";
+
+if (!window.gameState) {
+  window.gameState = {
+    isOrcDefeated: false,
+    isGateOpen: false,
+    hasKey: false,
+  };
+}
 
 export default class WorldScene extends Phaser.Scene {
   constructor() {
@@ -11,6 +21,7 @@ export default class WorldScene extends Phaser.Scene {
   init(data) {
     this.currentMapKey = data.targetMap || 'initial_room_data';
     this.spawnPointName = data.targetPoint || 'spawn_point';
+    window.gameState.lastMap = this.currentMapKey;
   }
 
   create() {
@@ -22,7 +33,9 @@ export default class WorldScene extends Phaser.Scene {
 
     // initial setting
     this.teleportPoints = new Map();
+    this.gateGroups = new Map();
     this.activePortal = null;
+    this.scene.launch('UIScene');
 
     // load map
     const map = this.make.tilemap({key: this.currentMapKey});
@@ -73,7 +86,7 @@ export default class WorldScene extends Phaser.Scene {
         this.matter.add.rectangle(x, y, obj.width, obj.height, {
           isStatic: true,
           label: label,
-          friction : isThroughable ? 0 : 0.1,
+          friction: isThroughable ? 0 : 0.1,
         })
       })
     }
@@ -108,31 +121,48 @@ export default class WorldScene extends Phaser.Scene {
             sprite.setOrigin(0, 1);
             sprite.setDepth(baseY);
 
-            const tileData = tileset.tileData && tileset.tileData[frameIndex];
-            if (tileData && tileData.animation) {
-              const animKey = `anim-${textureKey}-${frameIndex}`;
+            const properties = p.properties ? p.properties.reduce((acc, prop) => {
+              acc[prop.name] = prop.value;
+              return acc;
+            }, {}) : {};
 
-              if (!this.anims.exists(animKey)) {
-                const frames = tileData.animation.map(f => ({
+            const animKey = `anim-${textureKey}-${frameIndex}`;
+            const tileData = tileset.tileData && tileset.tileData[frameIndex];
+
+            if (tileData && tileData.animation && !this.anims.exists(animKey)) {
+              this.anims.create({
+                key: animKey,
+                frames: tileData.animation.map(f => ({
                   key: textureKey,
                   frame: f.tileid,
                   duration: f.duration,
-                }));
-
-                this.anims.create({
-                  key: animKey,
-                  frames: frames,
-                  repeat: -1,
-                })
-              }
-              sprite.play(animKey);
+                })),
+                repeat: properties.gateID ? 0 : -1,
+              })
             }
 
-            if (p.properties) {
-              const prop = p.properties.find(p => p.name === 'alwaysUnder');
-              if (prop && prop.value) {
-                sprite.setDepth(1);
+            if (properties.gateID) {
+              const gID = properties.gateID;
+              if (!this.gateGroups.has(gID)) {
+                this.gateGroups.set(gID, {sprites: [], isOpen: window.gameState.isGateOpen});
               }
+
+              const group = this.gateGroups.get(gID);
+              group.sprites.push(sprite);
+              sprite.setData('gateAnim', animKey);
+
+              if (window.gameState.isGateOpen) {
+                sprite.play(animKey);
+                sprite.anims.setProgress(1);
+              }
+            } else {
+              if (tileData && tileData.animation) {
+                sprite.play(animKey);
+              }
+            }
+
+            if (properties.alwaysUnder) {
+              sprite.setDepth(1);
             }
           }
         })
@@ -152,6 +182,8 @@ export default class WorldScene extends Phaser.Scene {
     // create enemy
     GoblinArcher.createAnimations(this);
     GoblinThief.createAnimations(this);
+    GoblinMaceman.createAnimations(this);
+    OrcChief.createAnimations(this);
     Slime.createAnimations(this);
     this.enemies = [];
     this.projectiles = [];
@@ -166,10 +198,20 @@ export default class WorldScene extends Phaser.Scene {
           } else if (obj.type === 'thief') {
             const goblin = new GoblinThief(this, obj.x, obj.y);
             this.enemies.push(goblin);
+          } else if (obj.type === 'maceman') {
+            const goblin = new GoblinMaceman(this, obj.x, obj.y);
+            this.enemies.push(goblin);
           }
         } else if (obj.name === 'slime') {
           const slime = new Slime(this, obj.x, obj.y);
           this.enemies.push(slime);
+        } else if (obj.name === 'orc') {
+          if (obj.type === 'chief') {
+            if (!window.gameState.isOrcDefeated) {
+              const orc = new OrcChief(this, obj.x, obj.y);
+              this.enemies.push(orc);
+            }
+          }
         }
       })
     }
@@ -225,14 +267,39 @@ export default class WorldScene extends Phaser.Scene {
       shadow.setDepth(0);
     }
 
-    // teleport
-    this.events.on('player-interact', () => {
+    // player interact
+    this.events.on('player-interact', (player) => {
       if (this.activePortal) {
         const data = this.activePortal.portalData;
+
+        if (data.is_locked) {
+          const gate = this.gateGroups.get(data.requireGate);
+          if (gate && gate.isOpen) {
+            this.changeScene(data);
+            return;
+          } else {
+            if (window.gameState.hasKey) {
+              this.unlockGate(data.requireGate);
+              this.events.emit('show-dialog', "The gate is slowly opening...");
+              return;
+            } else {
+              this.events.emit('show-dialog', "The gate is locked.\nYou need a key to open the gate.\nGo back to the forest and defeat the Orc!");
+              return;
+            }
+          }
+        }
+
         if (data.is_door) {
           this.changeScene(data);
         }
       }
+
+      this.loots.getChildren().forEach(loot => {
+        const d = Phaser.Math.Distance.Between(player.x, player.y, loot.x, loot.y);
+        if (d < 30) {
+          this.collectLoot(loot);
+        }
+      })
     })
 
     this.events.once('shutdown', () => {
@@ -265,6 +332,51 @@ export default class WorldScene extends Phaser.Scene {
     }
     setupCamera();
     this.scale.on('resize', setupCamera);
+
+    // keyboard prevent conflict
+    this.input.mouse.disableContextMenu();
+
+    this.input.keyboard.on('keydown', (e) => {
+      const conflictKeys = ['Tab', 'Alt', 'Control', 'w', 'a', 's', 'd', 'e'];
+      if (conflictKeys.includes(e.key) || e.ctrlKey) {
+        e.preventDefault();
+      }
+    });
+
+    // loot
+    this.loots = this.add.group();
+
+    this.events.on('spawn-loot', (data) => {
+      const loot = this.matter.add.sprite(data.x, data.y, data.type);
+      loot.setSensor(true);
+      loot.id = data.id;
+      loot.setDepth(loot.y);
+
+      this.tweens.add({
+        targets: loot,
+        y: '-=10',
+        duration: 800,
+        yoyo: true,
+        repeat: -1,
+        ease: 'Sine.easeInOut',
+      })
+
+      this.loots.add(loot);
+    })
+
+    // player death
+    this.events.on('player-die', () => {
+      this.handlePlayerDeath();
+    })
+
+    this.events.on('shutdown', () => {
+      this.events.off('player-die');
+      this.events.off('player-interact');
+    })
+
+    this.input.keyboard.on('keydown-F', () => {
+      this.events.emit('show-dialog', {text: "Press F to pay respects.", name: "Jack"});
+    });
   }
 
   update(time, delta) {
@@ -284,7 +396,7 @@ export default class WorldScene extends Phaser.Scene {
 
     // arrow
     this.projectiles = this.projectiles.filter(p => p.active);
-    this.projectiles.forEach(p=> p.update(time, delta));
+    this.projectiles.forEach(p => p.update(time, delta));
   }
 
   changeScene(data) {
@@ -298,5 +410,64 @@ export default class WorldScene extends Phaser.Scene {
         });
       })
     }
+  }
+
+  collectLoot(loot) {
+    if (loot.id === "castle_key") {
+      window.gameState.hasKey = true;
+      console.log('get key');
+    }
+
+    this.tweens.killTweensOf(loot);
+    this.player.inventory = this.player.inventory || [];
+    this.player.inventory.push(loot.id);
+
+    this.tweens.add({
+      targets: loot,
+      alpha: 0,
+      scale: 2,
+      y: loot.y - 20,
+      duration: 200,
+      onComplete: () => {
+        loot.destroy()
+      },
+    })
+  }
+
+  unlockGate(gID) {
+    const group = this.gateGroups.get(gID);
+    if (!group) {
+      return;
+    }
+
+    group.isOpen = true;
+    window.gameState.isGateOpen = true;
+
+    group.sprites.forEach(s => {
+      const key = s.getData('gateAnim');
+      if (key) {
+        s.play(key);
+      }
+    })
+    this.cameras.main.shake(200, 0.005);
+  }
+
+  handlePlayerDeath() {
+    this.enemies.forEach(e => {
+      if (e.active) {
+        e.stopMovement();
+      }
+    })
+
+    this.cameras.main.flash(500, 255, 0, 0);
+    this.time.delayedCall(1000, () => {
+      this.cameras.main.fadeOut(1000, 0, 0, 0);
+      this.cameras.main.once('camerafadeoutcomplete', () => {
+        this.scene.restart({
+          targetMap: window.gameState.currentMapKey,
+          targetPoint: 'spawn_point' || {x: 100, y: 100},
+        })
+      })
+    })
   }
 }

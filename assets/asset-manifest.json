@@ -71,6 +71,56 @@
       "tiledName": "ts_cattail_anim_1"
     },
     {
+      "key": "img_cave_decor",
+      "path": "Cave_Decorations.png",
+      "tiledName": "ts_cave_decor"
+    },
+    {
+      "key": "img_cave_doorway",
+      "path": "Cave_Doorway_1.png",
+      "tiledName": "ts_cave_doorway"
+    },
+    {
+      "key": "img_cave_floor_1",
+      "path": "Cave_Floor_1.png",
+      "tiledName": "ts_cave_floor_1"
+    },
+    {
+      "key": "img_cave_floor_2",
+      "path": "Cave_Floor_2.png",
+      "tiledName": "ts_cave_floor_2"
+    },
+    {
+      "key": "img_cave_floor_decor",
+      "path": "Cave_Floor_Decoration.png",
+      "tiledName": "ts_cave_floor_decor"
+    },
+    {
+      "key": "img_cave_floor_m",
+      "path": "Cave_Floor_Middle.png",
+      "tiledName": "ts_cave_floor_m"
+    },
+    {
+      "key": "img_cave_rock_anim_1",
+      "path": "Cave_Rock_1_Anim.png",
+      "tiledName": "ts_cave_rock_anim_1"
+    },
+    {
+      "key": "img_cave_rock_anim_2",
+      "path": "Cave_Rock_2_Anim.png",
+      "tiledName": "ts_cave_rock_anim_2"
+    },
+    {
+      "key": "img_cave_wall",
+      "path": "Cave_Walls.png",
+      "tiledName": "ts_cave_wall"
+    },
+    {
+      "key": "img_cave_wall_support",
+      "path": "Cave_Wall_Support.png",
+      "tiledName": "ts_cave_wall_support"
+    },
+    {
       "key": "img_chair",
       "path": "Chairs.png",
       "tiledName": "ts_chair"
@@ -81,6 +131,11 @@
       "tiledName": "ts_cliff_4"
     },
     {
+      "key": "img_cliff_cave_intrance_2",
+      "path": "Stone_Cliff_2_Cave_Entrance.png",
+      "tiledName": "ts_cliff_cave_entrance_2"
+    },
+    {
       "key": "img_crops",
       "path": "Crops.png",
       "tiledName": "ts_crops"
@@ -89,6 +144,16 @@
       "key": "img_drawer",
       "path": "Drawers.png",
       "tiledName": "ts_drawer"
+    },
+    {
+      "key": "img_dungeon_2",
+      "path": "Dungeon_2.png",
+      "tiledName": "ts_dungeon_2"
+    },
+    {
+      "key": "img_dungeon_gate_anim",
+      "path": "Dungeon_2_Gate_anim.png",
+      "tiledName": "ts_dungeon_gate_anim"
     },
     {
       "key": "img_farmland_d",
@@ -186,6 +251,11 @@
       "tiledName": "ts_grass"
     },
     {
+      "key": "img_grass_3",
+      "path": "Grass_Tiles_3.png",
+      "tiledName": "ts_grass_3"
+    },
+    {
       "key": "img_grass_4",
       "path": "Grass_Tiles_4.png",
       "tiledName": "ts_grass_4"
@@ -209,6 +279,11 @@
       "key": "img_grass_m",
       "path": "Grass_1_Middle.png",
       "tiledName": "ts_grass_m"
+    },
+    {
+      "key": "img_grass_m_3",
+      "path": "Grass_3_Middle.png",
+      "tiledName": "ts_grass_m_3"
     },
     {
       "key": "img_grass_m_4",
@@ -286,6 +361,11 @@
       "tiledName": "ts_lantern"
     },
     {
+      "key": "img_lantern_s",
+      "path": "Lantern.png",
+      "tiledName": "ts_lantern_s"
+    },
+    {
       "key": "img_lillypad_1",
       "path": "Lillypad_Purple_6_Anim.png",
       "tiledName": "ts_lillypad_1"
@@ -304,6 +384,11 @@
       "key": "img_log_water_anim_2",
       "path": "Log_2_Water_Anim.png",
       "tiledName": "ts_log_water_anim_2"
+    },
+    {
+      "key": "img_minecart",
+      "path": "Minecrats.png",
+      "tiledName": "ts_minecart"
     },
     {
       "key": "img_muschroom_anim_1",
@@ -366,6 +451,11 @@
       "tiledName": "ts_placeable_deco"
     },
     {
+      "key": "img_rail",
+      "path": "Rails.png",
+      "tiledName": "ts_rail"
+    },
+    {
       "key": "img_rock_anim_13",
       "path": "Rock_13_Anim.png",
       "tiledName": "ts_rock_anim_13"
@@ -399,6 +489,11 @@
       "key": "img_table",
       "path": "Tables.png",
       "tiledName": "ts_table"
+    },
+    {
+      "key": "img_volcano_plant",
+      "path": "Volcano_Plants.png",
+      "tiledName": "ts_volcano_plant"
     },
     {
       "key": "img_water_anim",
@@ -512,6 +607,104 @@
     {
       "key": "forest_data",
       "path": "forest.json"
+    },
+    {
+      "key": "cave_data",
+      "path": "cave.json"
+    },
+    {
+      "key": "castle_entrance_data",
+      "path": "castle_entrance.json"
+    },
+    {
+      "key": "castle_data",
+      "path": "castle.json"
+    }
+  ],
+  "sprites" : [
+    {
+      "key": "player",
+      "path": "sprite-sheet.png",
+      "frameWidth": 64,
+      "frameHeight": 64
+    },
+    {
+      "key": "goblin-archer",
+      "path": "Goblin_Archer.png",
+      "frameWidth": 48,
+      "frameHeight": 48
+    },
+    {
+      "key": "goblin-thief",
+      "path": "Goblin_Thief.png",
+      "frameWidth": 32,
+      "frameHeight": 32
+    },
+    {
+      "key": "goblin-maceman",
+      "path": "Goblin_Maceman.png",
+      "frameWidth": 32,
+      "frameHeight": 32
+    },
+    {
+      "key": "orc-chief",
+      "path": "Orc_Chief.png",
+      "frameWidth": 64,
+      "frameHeight": 64
+    },
+    {
+      "key": "arrow",
+      "path": "Arrow.png",
+      "frameWidth": 16,
+      "frameHeight": 16
+    },
+    {
+      "key": "slime_blue",
+      "path": "Slime_Medium_Blue.png",
+      "frameWidth": 32,
+      "frameHeight": 32
+    },
+    {
+      "key": "slime_green",
+      "path": "Slime_Medium_Green.png",
+      "frameWidth": 32,
+      "frameHeight": 32
+    },
+    {
+      "key": "slime_pink",
+      "path": "Slime_Medium_Pink.png",
+      "frameWidth": 32,
+      "frameHeight": 32
+    },
+    {
+      "key": "slime_red",
+      "path": "Slime_Medium_Red.png",
+      "frameWidth": 32,
+      "frameHeight": 32
+    },
+    {
+      "key": "slime_yellow",
+      "path": "Slime_Medium_Yellow.png",
+      "frameWidth": 32,
+      "frameHeight": 32
+    },
+    {
+      "key": "ui-health-bar",
+      "path": "UI_HealthBar.png",
+      "frameWidth": 16,
+      "frameHeight": 8
+    },
+    {
+      "key": "ui-player-health-bar",
+      "path": "UI_Player_HealthBar.png",
+      "frameWidth": 64,
+      "frameHeight": 32
+    },
+    {
+      "key": "key",
+      "path": "key.png",
+      "frameWidth": 16,
+      "frameHeight": 16
     }
   ]
 }

@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import AnimatedTiles from 'phaser-animated-tiles';
 import PreloadScene from './scenes/PreloadScene.js';
 import WorldScene from './scenes/WorldScene.js';
+import UIScene from "./scenes/UIScene.js";
 
 /** @type {Phaser.Types.Core.GameConfig} */
 const config = {
@@ -22,7 +23,7 @@ const config = {
     default: 'matter',
     matter: {
       gravity: {y: 0},
-      debug: true,
+      debug: false,
     },
   },
   plugins: {
@@ -34,7 +35,7 @@ const config = {
       }
     ]
   },
-  scene: [PreloadScene, WorldScene]
+  scene: [PreloadScene, WorldScene, UIScene]
 }
 
 const game = new Phaser.Game(config);

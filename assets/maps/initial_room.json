@@ -518,19 +518,7 @@
          "draworder":"topdown",
          "id":11,
          "name":"enemy",
-         "objects":[
-                {
-                 "height":0,
-                 "id":54,
-                 "name":"goblin",
-                 "point":true,
-                 "rotation":0,
-                 "type":"thief",
-                 "visible":true,
-                 "width":0,
-                 "x":48,
-                 "y":64
-                }],
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -600,7 +588,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":55,
+ "nextobjectid":57,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

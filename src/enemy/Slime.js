@@ -59,7 +59,7 @@ export default class Slime extends Enemy {
       return;
     }
 
-    this.setDepth(this.y);
+    this.setDepth(this.y + 5);
 
     const color = this.texture.key;
     const distance = Phaser.Math.Distance.Between(this.x, this.y, player.x, player.y);

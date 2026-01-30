@@ -6,7 +6,7 @@ export default class GoblinThief extends Enemy {
 
     this.speed = 1.25;
     this.detectRange = 250;
-    this.attackRange = 30;
+    this.attackRange = 20;
     this.dash = 2;
     this.attackCD = 1500;
     this.isRetreating = false;
@@ -60,6 +60,8 @@ export default class GoblinThief extends Enemy {
 
   update(time, delta) {
     if (this.isDead || this.isHurt || this.isAttacking) {
+      this.isRetreating = false;
+      this.setVelocity(0, 0);
       return;
     }
 

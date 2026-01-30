@@ -5,7 +5,7 @@ export default class GoblinArcher extends Enemy {
   constructor(scene, x, y) {
     super(scene, x, y, 'goblin-archer', 5);
 
-    this.speed = 0.8;
+    this.speed = 0.9;
     this.attackRange = 200;
     this.safeDistance = 80;
     this.lastFired = 0;

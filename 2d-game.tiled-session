@@ -3,26 +3,110 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "assets/maps/initial_room.json",
+    "activeFile": "",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "全部檔案 (*)",
     "fileStates": {
-        "": {
-            "scaleInDock": 4,
-            "scaleInEditor": 1
+        "assets/maps/castle.json": {
+            "scale": 2.6540625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 159.94348286824442,
+                "y": 208.73660661721416
+            }
+        },
+        "assets/maps/castle_entrance.json": {
+            "expandedObjectLayers": [
+                4,
+                7,
+                5
+            ],
+            "scale": 11,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 167.6818181818182,
+                "y": 53.27272727272728
+            }
+        },
+        "assets/maps/castle_entrance.json#ts_dungeon_2": {
+            "scaleInDock": 2
+        },
+        "assets/maps/castle_entrance.json#ts_dungeon_gate_anim": {
+            "scaleInDock": 2,
+            "scaleInEditor": 3
+        },
+        "assets/maps/castle_entrance.json#ts_grass_3": {
+            "scaleInDock": 2
+        },
+        "assets/maps/castle_entrance.json#ts_grass_m_3": {
+            "scaleInDock": 1
+        },
+        "assets/maps/castle_entrance.json#ts_volcano_plant": {
+            "scaleInDock": 3
+        },
+        "assets/maps/cave.json": {
+            "expandedObjectLayers": [
+                4,
+                6,
+                7,
+                5
+            ],
+            "scale": 8,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 601.0625,
+                "y": 65.75
+            }
+        },
+        "assets/maps/cave.json#ts_cave_decor": {
+            "scaleInDock": 1
+        },
+        "assets/maps/cave.json#ts_cave_doorway": {
+            "scaleInDock": 1
+        },
+        "assets/maps/cave.json#ts_cave_floor_1": {
+            "scaleInDock": 3
+        },
+        "assets/maps/cave.json#ts_cave_floor_2": {
+            "scaleInDock": 4
+        },
+        "assets/maps/cave.json#ts_cave_floor_decor": {
+            "scaleInDock": 3
+        },
+        "assets/maps/cave.json#ts_cave_floor_m": {
+            "scaleInDock": 1
+        },
+        "assets/maps/cave.json#ts_cave_rock_anim_1": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "assets/maps/cave.json#ts_cave_rock_anim_2": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        },
+        "assets/maps/cave.json#ts_cave_wall": {
+            "scaleInDock": 1
+        },
+        "assets/maps/cave.json#ts_cave_wall_support": {
+            "scaleInDock": 1
+        },
+        "assets/maps/cave.json#ts_lantern_s": {
+            "scaleInDock": 2
+        },
+        "assets/maps/cave.json#ts_minecart": {
+            "scaleInDock": 3
+        },
+        "assets/maps/cave.json#ts_rail": {
+            "scaleInDock": 2
         },
         "assets/maps/dock.json": {
-            "expandedObjectLayers": [
-                5,
-                7,
-                4
-            ],
-            "scale": 4,
-            "selectedLayer": 5,
+            "scale": 2.0261718749999997,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 361.125,
-                "y": 101.25
+                "x": 320.0616926932717,
+                "y": 79.95373048004629
             }
         },
         "assets/maps/dock.json#ts_boat": {
@@ -34,30 +118,20 @@
         "assets/maps/dock.json#ts_bridge_w": {
             "scaleInDock": 1
         },
-        "assets/maps/dock.json#ts_cattail_anim": {
-            "scaleInEditor": 1
-        },
         "assets/maps/dock.json#ts_cattail_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 5.5
-        },
-        "assets/maps/dock.json#ts_deck": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_flower_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_grass": {
             "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_grass_anim_1": {
-            "scaleInDock": 3,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_grass_anim_2": {
-            "scaleInDock": 3,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_grass_m": {
             "scaleInDock": 1
@@ -66,344 +140,256 @@
             "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_lillypad_2": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_log_water_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 2
+            "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_water_anim": {
-            "scaleInDock": 2,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_water_foam_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_water_m_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_water_m_anim_2": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_water_rock_anim_10": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_water_rock_anim_3": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/dock.json#ts_water_rock_anim_4": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/forest.json": {
             "expandedObjectLayers": [
-                5,
                 4,
                 6,
-                7
+                5
             ],
-            "scale": 3,
-            "selectedLayer": 5,
+            "scale": 11,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 506.49999999999994,
-                "y": 381
+                "x": 437.8636363636364,
+                "y": 480.72727272727275
             }
         },
-        "assets/maps/forest.json#img_water_foam_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 2
-        },
         "assets/maps/forest.json#ts_apple_tree": {
-            "scaleInDock": 5.5
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_birch_tree_b": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_birch_tree_m": {
-            "scaleInDock": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_birch_tree_s": {
-            "scaleInDock": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_branch_water_anim": {
-            "scaleInDock": 3,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_bridge_w": {
             "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_cattail_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_cliff_4": {
-            "scaleInDock": 3
+            "scaleInDock": 1
+        },
+        "assets/maps/forest.json#ts_cliff_cave_entrance_2": {
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_flower_anim_1": {
-            "scaleInDock": 2,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_flower_anim_2": {
-            "scaleInDock": 3,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_flower_anim_3": {
-            "scaleInDock": 2,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_flower_anim_4": {
-            "scaleInDock": 2,
-            "scaleInEditor": 2
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_flower_anim_5": {
-            "scaleInDock": 2,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_flower_grass_anim_1": {
-            "scaleInDock": 2,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_flower_grass_anim_15": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_flower_grass_anim_2": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_flower_grass_anim_8": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_flower_grass_anim_9": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_fruit_tree_b": {
-            "scaleInDock": 4,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_fruit_tree_m": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_fruit_tree_s": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_grass_4": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_grass_anim_1": {
-            "scaleInDock": 4,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_grass_anim_2": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_grass_anim_3": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_grass_m_4": {
             "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_hedge": {
-            "scaleInDock": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_log_water_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
-        },
-        "assets/maps/forest.json#ts_log_water_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_log_water_anim_2": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_muschroom_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_muschroom_anim_7": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
-        },
-        "assets/maps/forest.json#ts_mushroom_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
-        },
-        "assets/maps/forest.json#ts_mushroom_anim_7": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_oak_tree_b": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_oak_tree_m": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_oak_tree_s": {
-            "scaleInDock": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_outdoor_decor": {
             "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_peach_tree": {
-            "scaleInDock": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_rock_anim_13": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_spruce_tree_b": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_spruce_tree_m": {
-            "scaleInDock": 5.5
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_spruce_tree_s": {
             "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_water_anim_4": {
-            "scaleInDock": 3,
-            "scaleInEditor": 1.5
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_water_foam_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 2
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_water_grass_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_water_m_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_water_m_anim_2": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_water_rock_anim_10": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_water_rock_anim_3": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_water_rock_anim_4": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_water_rock_anim_8": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/forest.json#ts_waterfall_anim_4": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
-        },
-        "assets/maps/forest.json#ts_waterfall_anim_8": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json": {
-            "expandedObjectLayers": [
-                8,
-                6,
-                7
-            ],
-            "scale": 5.5,
-            "selectedLayer": 5,
+            "scale": 2.6540625,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 160,
-                "y": 160.0909090909091
+                "x": 159.94348286824442,
+                "y": 160.13187330742963
             }
         },
         "assets/maps/initial_map.json#ts_beach": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_beach_decor": {
             "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_bridge_w": {
-            "scaleInDock": 1,
-            "scaleInEditor": 5.5
-        },
-        "assets/maps/initial_map.json#ts_collision": {
-            "scaleInDock": 1,
-            "scaleInEditor": 11
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_crops": {
-            "scaleInDock": 1,
-            "scaleInEditor": 5.5
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_farmland_d": {
             "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_fences": {
-            "scaleInDock": 1,
-            "scaleInEditor": 5.5
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_flower_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_flower_anim_2": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_flower_anim_3": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_flower_anim_4": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_flower_anim_5": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
-        },
-        "assets/maps/initial_map.json#ts_flower_grass_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 8
-        },
-        "assets/maps/initial_map.json#ts_flower_grass_anim_2": {
-            "scaleInDock": 1,
-            "scaleInEditor": 16
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_grass": {
-            "scaleInDock": 1,
-            "scaleInEditor": 5.5
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_grass_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_grass_anim_2": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_grass_anim_3": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_grass_m": {
             "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_hedge": {
-            "scaleInDock": 4
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_house_black": {
             "scaleInDock": 1
@@ -415,8 +401,7 @@
             "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_oak_tree_m": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_path_decor": {
             "scaleInDock": 1
@@ -425,152 +410,64 @@
             "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_water_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_water_foam_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_water_m": {
             "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_water_m_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 5.5
+            "scaleInDock": 1
         },
         "assets/maps/initial_map.json#ts_water_m_anim_2": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/initial_room.json": {
-            "expandedObjectLayers": [
-                8,
-                5
-            ],
-            "scale": 5.5,
-            "selectedLayer": 5,
+            "scale": 4.4234374999999995,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 98.81818181818181,
-                "y": 86.72727272727273
+                "x": 64.09042741080893,
+                "y": 96.0791239844578
             }
         },
         "assets/maps/initial_room.json#ts_anvil_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 5.5
+            "scaleInDock": 1
         },
         "assets/maps/initial_room.json#ts_bed": {
-            "scaleInDock": 2,
-            "scaleInEditor": 1
-        },
-        "assets/maps/initial_room.json#ts_collision": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/initial_room.json#ts_furnace_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/initial_room.json#ts_indoor_decor": {
-            "scaleInDock": 3,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/initial_room.json#ts_indoor_wall": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/initial_room.json#ts_lamps": {
-            "scaleInDock": 3,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/initial_room.json#ts_picnic_blanket": {
-            "scaleInDock": 4
+            "scaleInDock": 1
         },
         "assets/maps/initial_room.json#ts_table": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/initial_room.json#ts_window_d": {
             "scaleInDock": 1
         },
         "assets/maps/initial_room.json#ts_wood_floor": {
-            "scaleInDock": 4
-        },
-        "assets/maps/map.json": {
-            "expandedObjectLayers": [
-                5
-            ],
-            "scale": 3,
-            "selectedLayer": 4,
-            "viewCenter": {
-                "x": 171.83333333333331,
-                "y": 329.66666666666663
-            }
-        },
-        "assets/maps/normal_room.json": {
-            "expandedObjectLayers": [
-                6,
-                5,
-                4
-            ],
-            "scale": 4,
-            "selectedLayer": 5,
-            "viewCenter": {
-                "x": 18,
-                "y": 193.75
-            }
-        },
-        "assets/maps/normal_room.json#ts_anvil_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
-        },
-        "assets/maps/normal_room.json#ts_bed": {
-            "scaleInDock": 3
-        },
-        "assets/maps/normal_room.json#ts_chair": {
             "scaleInDock": 1
-        },
-        "assets/maps/normal_room.json#ts_drawer": {
-            "scaleInDock": 3
-        },
-        "assets/maps/normal_room.json#ts_furnace_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 8
-        },
-        "assets/maps/normal_room.json#ts_indoor_decor": {
-            "scaleInDock": 2
-        },
-        "assets/maps/normal_room.json#ts_indoor_wall": {
-            "scaleInDock": 2
-        },
-        "assets/maps/normal_room.json#ts_lamps": {
-            "scaleInDock": 3
-        },
-        "assets/maps/normal_room.json#ts_picnic_blanket": {
-            "scaleInDock": 1
-        },
-        "assets/maps/normal_room.json#ts_placeable_deco": {
-            "scaleInDock": 3
-        },
-        "assets/maps/normal_room.json#ts_table": {
-            "scaleInDock": 2
-        },
-        "assets/maps/normal_room.json#ts_window_d": {
-            "scaleInDock": 1
-        },
-        "assets/maps/normal_room.json#ts_wood_floor": {
-            "scaleInDock": 2,
-            "scaleInEditor": 5.5
         },
         "assets/maps/normal_room_1.json": {
-            "expandedObjectLayers": [
-                6,
-                5,
-                4
-            ],
-            "scale": 5.5,
-            "selectedLayer": 5,
+            "scale": 3.53875,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 5,
-                "y": 226.72727272727275
+                "x": 80.11303426351114,
+                "y": 120.09890498057224
             }
         },
         "assets/maps/normal_room_1.json#ts_anvil_anim": {
@@ -613,41 +510,36 @@
             "scaleInDock": 1
         },
         "assets/maps/normal_room_2.json": {
-            "expandedObjectLayers": [
-                6,
-                5,
-                4
-            ],
-            "scale": 45,
-            "selectedLayer": 5,
+            "scale": 3.53875,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 81.07777777777778,
-                "y": 234.02222222222224
+                "x": 80.11303426351114,
+                "y": 120.09890498057224
             }
         },
         "assets/maps/normal_room_2.json#ts_anvil_anim": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/normal_room_2.json#ts_bed": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/normal_room_2.json#ts_chair": {
             "scaleInDock": 1
         },
         "assets/maps/normal_room_2.json#ts_drawer": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/normal_room_2.json#ts_furnace_anim": {
             "scaleInDock": 1
         },
         "assets/maps/normal_room_2.json#ts_indoor_decor": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/normal_room_2.json#ts_indoor_wall": {
             "scaleInDock": 1
         },
         "assets/maps/normal_room_2.json#ts_lamps": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/normal_room_2.json#ts_picnic_blanket": {
             "scaleInDock": 1
@@ -665,29 +557,24 @@
             "scaleInDock": 1
         },
         "assets/maps/normal_room_3.json": {
-            "expandedObjectLayers": [
-                6,
-                5,
-                4
-            ],
-            "scale": 45,
-            "selectedLayer": 5,
+            "scale": 3.53875,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 80.7,
-                "y": 234.04444444444445
+                "x": 80.11303426351114,
+                "y": 120.09890498057224
             }
         },
         "assets/maps/normal_room_3.json#ts_anvil_anim": {
-            "scaleInDock": 1.5
+            "scaleInDock": 1
         },
         "assets/maps/normal_room_3.json#ts_bed": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/normal_room_3.json#ts_bookshelf": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/normal_room_3.json#ts_chair": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/normal_room_3.json#ts_drawer": {
             "scaleInDock": 1
@@ -696,7 +583,7 @@
             "scaleInDock": 1
         },
         "assets/maps/normal_room_3.json#ts_indoor_decor": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/normal_room_3.json#ts_indoor_wall": {
             "scaleInDock": 1
@@ -705,10 +592,10 @@
             "scaleInDock": 1
         },
         "assets/maps/normal_room_3.json#ts_picnic_blanket": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/normal_room_3.json#ts_placeable_deco": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/normal_room_3.json#ts_table": {
             "scaleInDock": 1
@@ -720,20 +607,15 @@
             "scaleInDock": 1
         },
         "assets/maps/village.json": {
-            "expandedObjectLayers": [
-                5,
-                3,
-                4
-            ],
-            "scale": 3,
-            "selectedLayer": 5,
+            "scale": 1.32703125,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 320,
-                "y": 320.16666666666663
+                "x": 319.88696573648883,
+                "y": 320.26374661485926
             }
         },
         "assets/maps/village.json#ts_bench": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_birch_tree_b": {
             "scaleInDock": 1
@@ -742,64 +624,55 @@
             "scaleInDock": 1
         },
         "assets/maps/village.json#ts_crops": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_farmland_d": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_farmland_w": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_fences": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_flower_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_flower_anim_2": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_flower_anim_3": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_flower_anim_4": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_flower_anim_5": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_fountain_anim": {
-            "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_fruit_tree_b": {
             "scaleInDock": 1
         },
         "assets/maps/village.json#ts_grass": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_grass_anim_1": {
-            "scaleInDock": 4,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_grass_anim_2": {
-            "scaleInDock": 4,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_grass_anim_3": {
-            "scaleInDock": 3,
-            "scaleInEditor": 1.5
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_grass_m": {
             "scaleInDock": 1
         },
         "assets/maps/village.json#ts_hedge": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_house_black": {
             "scaleInDock": 1
@@ -808,10 +681,10 @@
             "scaleInDock": 1
         },
         "assets/maps/village.json#ts_house_black_s": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_house_blue": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_house_blue_b": {
             "scaleInDock": 1
@@ -826,19 +699,13 @@
             "scaleInDock": 1
         },
         "assets/maps/village.json#ts_house_red_s": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_lantern": {
-            "scaleInDock": 1,
-            "scaleInEditor": 3
-        },
-        "assets/maps/village.json#ts_lillypad": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_lillypad_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_lillypad_2": {
             "scaleInDock": 1
@@ -847,75 +714,57 @@
             "scaleInDock": 1
         },
         "assets/maps/village.json#ts_outdoor_decor": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_pavement": {
-            "scaleInDock": 4
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_scarecrow": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_sign": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_water_anim": {
-            "scaleInDock": 4,
-            "scaleInEditor": 3
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_water_m_anim_1": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_water_m_anim_2": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1.5
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_water_rock_anim_3": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/village.json#ts_water_rock_anim_4": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/village_office.json": {
-            "expandedObjectLayers": [
-                6,
-                8,
-                7
-            ],
-            "scale": 5.5,
-            "selectedLayer": 5,
+            "scale": 3.317578125,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 146.63636363636363,
-                "y": 189.63636363636363
+                "x": 159.9058047804074,
+                "y": 128.10549864594375
             }
         },
         "assets/maps/village_office.json#ts_bookshelf": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/village_office.json#ts_chair": {
             "scaleInDock": 1
         },
         "assets/maps/village_office.json#ts_drawer": {
-            "scaleInDock": 3
-        },
-        "assets/maps/village_office.json#ts_indoor_deco": {
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/village_office.json#ts_indoor_decor": {
-            "scaleInDock": 3,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/village_office.json#ts_indoor_wall": {
-            "scaleInDock": 2
-        },
-        "assets/maps/village_office.json#ts_lamp": {
-            "scaleInDock": 3
+            "scaleInDock": 1
         },
         "assets/maps/village_office.json#ts_lamps": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "assets/maps/village_office.json#ts_placeable_deco": {
             "scaleInDock": 1
@@ -924,49 +773,25 @@
             "scaleInDock": 1
         },
         "assets/maps/village_office.json#ts_window_d": {
-            "scaleInDock": 1.5
+            "scaleInDock": 1
         },
         "assets/maps/village_office.json#ts_window_s": {
-            "scaleInDock": 2
+            "scaleInDock": 1
         },
         "assets/maps/village_office.json#ts_wood_floor": {
-            "scaleInDock": 3
-        },
-        "initial_map.json": {
-            "scale": 2.6540625,
-            "selectedLayer": 0,
-            "viewCenter": {
-                "x": 159.94348286824442,
-                "y": 160.13187330742963
-            }
+            "scaleInDock": 1
         }
     },
-    "frame.defaultDuration": 100,
     "last.imagePath": "C:/Users/patri/OneDrive/桌面/程式/html、js、css/2d-website-game/assets/tilesets/images",
-    "map.height": 10,
     "map.lastUsedFormat": "json",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "map.width": 20,
     "openFiles": [
-        "assets/maps/initial_room.json",
-        "assets/maps/initial_map.json",
-        "assets/maps/village.json"
     ],
-    "project": "game.tiled-project",
-    "property.type": "bool",
+    "project": "2d-game.tiled-project",
+    "property.type": "string",
     "recentFiles": [
-        "assets/maps/village.json",
-        "assets/maps/initial_map.json",
-        "assets/maps/initial_room.json",
-        "assets/maps/village_office.json",
-        "assets/maps/normal_room_3.json",
-        "assets/maps/normal_room_2.json",
-        "assets/maps/normal_room_1.json",
-        "assets/maps/dock.json",
-        "assets/maps/normal_room.json",
-        "assets/maps/map.json",
-        "initial_map.json"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {
