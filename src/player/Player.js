@@ -24,7 +24,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     this.direction = 2;
     this.currentState = STATE.IDLE;
 
-    this.hp = 20;
+    this.hp = window.gameState.playerHp || 20;
     this.maxHp = 20;
     this.isDead = false;
     this.combo = 1;
@@ -243,7 +243,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
 
         const d = Phaser.Math.Distance.Between(this.x, this.y, e.x, e.y);
         if (d < attackRange) {
-          const damage = num === 3 ? 2 : 1;
+          const damage = num === 3 ? 3 : 2;
           e.takeDamage(damage, this);
         }
       })
@@ -251,7 +251,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   }
 
   movement() {
-    let speed = this.cursors.shift.isDown ? 1.3 : 1;
+    let speed = this.cursors.shift.isDown ? 1.35 : 1;
     let vx = 0;
     let vy = 0;
 
@@ -351,14 +351,36 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   }
 
   takeDamage(amount) {
-    if (this.isDead || this.isInvulnerable) {
+    if (this.isDead) {
+      return;
+    }
+
+    if (this.currentState === STATE.DODGE) {
+      const finalDamage = Math.ceil(amount * 0.6);
+      this.hp -= finalDamage;
+      this.triggerHurtEffect();
+      return;
+    }
+
+    if (this.isInvulnerable) {
       return;
     }
 
     this.hp -= amount;
+    this.triggerHurtEffect();
+  }
+
+  triggerHurtEffect() {
+    this.isInvulnerable = true;
+    window.gameState.playerHp = this.hp;
     this.lastDamageTime = this.scene.time.now;
     this.setTint(0xff0000);
-    this.scene.time.delayedCall(200, () => this.clearTint());
+    this.scene.time.delayedCall(200, () => {
+      this.clearTint();
+      if (this.currentState !== STATE.DODGE) {
+        this.isInvulnerable = false;
+      }
+    });
     this.scene.events.emit('player-hp-changed', this.hp, this.maxHp);
 
     if (this.hp <= 0) {

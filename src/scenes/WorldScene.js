@@ -4,12 +4,16 @@ import GoblinThief from "../enemy/GoblinThief.js";
 import GoblinMaceman from "../enemy/GoblinMaceman.js";
 import OrcChief from "../enemy/OrcChief.js";
 import Slime from "../enemy/Slime.js";
+import Boss from "../enemy/Boss.js";
 
 if (!window.gameState) {
   window.gameState = {
     isOrcDefeated: false,
     isGateOpen: false,
     hasKey: false,
+    isBossFighting: false,
+    isBossDefeated : false,
+    playerHp: 20,
   };
 }
 
@@ -21,6 +25,7 @@ export default class WorldScene extends Phaser.Scene {
   init(data) {
     this.currentMapKey = data.targetMap || 'initial_room_data';
     this.spawnPointName = data.targetPoint || 'spawn_point';
+    window.gameState.currentMapKey = this.currentMapKey;
     window.gameState.lastMap = this.currentMapKey;
   }
 
@@ -185,6 +190,7 @@ export default class WorldScene extends Phaser.Scene {
     GoblinMaceman.createAnimations(this);
     OrcChief.createAnimations(this);
     Slime.createAnimations(this);
+    Boss.createAnimations(this);
     this.enemies = [];
     this.projectiles = [];
 
@@ -207,10 +213,16 @@ export default class WorldScene extends Phaser.Scene {
           this.enemies.push(slime);
         } else if (obj.name === 'orc') {
           if (obj.type === 'chief') {
-            if (!window.gameState.isOrcDefeated) {
+            if (!window.gameState.isOrcDefeated && !window.gameState.hasKey) {
               const orc = new OrcChief(this, obj.x, obj.y);
               this.enemies.push(orc);
             }
+          }
+        } else if (obj.name === 'boss') {
+          if (!window.gameState.isBossDefeated) {
+            const boss = new Boss(this, obj.x, obj.y);
+            this.enemies.push(boss);
+            window.gameState.isBossFighting = true;
           }
         }
       })
@@ -271,6 +283,14 @@ export default class WorldScene extends Phaser.Scene {
     this.events.on('player-interact', (player) => {
       if (this.activePortal) {
         const data = this.activePortal.portalData;
+
+        if (window.gameState.isBossFighting && (data.is_door || data.is_locked) && this.currentMapKey === 'castle_data') {
+          this.events.emit('show-dialog', "The gate is locked.\nDefeat the boss to leave!");
+          return;
+        } else if (!window.gameState.isBossFighting && this.currentMapKey === 'castle_data') {
+          this.changeScene(data);
+          return;
+        }
 
         if (data.is_locked) {
           const gate = this.gateGroups.get(data.requireGate);
@@ -377,6 +397,9 @@ export default class WorldScene extends Phaser.Scene {
     this.input.keyboard.on('keydown-F', () => {
       this.events.emit('show-dialog', {text: "Press F to pay respects.", name: "Jack"});
     });
+    this.events.on('boss-defeated', () => {
+      this.events.emit('show-dialog', {text: "You Win!\nYou defeat the broccoli chicken!"});
+    })
   }
 
   update(time, delta) {
@@ -394,7 +417,7 @@ export default class WorldScene extends Phaser.Scene {
     })
     this.enemies = this.enemies.filter(e => e.active);
 
-    // arrow
+    // projectiles
     this.projectiles = this.projectiles.filter(p => p.active);
     this.projectiles.forEach(p => p.update(time, delta));
   }
@@ -449,7 +472,7 @@ export default class WorldScene extends Phaser.Scene {
         s.play(key);
       }
     })
-    this.cameras.main.shake(200, 0.005);
+    this.cameras.main.shake(200, 0.002);
   }
 
   handlePlayerDeath() {
@@ -463,9 +486,10 @@ export default class WorldScene extends Phaser.Scene {
     this.time.delayedCall(1000, () => {
       this.cameras.main.fadeOut(1000, 0, 0, 0);
       this.cameras.main.once('camerafadeoutcomplete', () => {
+        window.gameState.playerHp = this.player.maxHp;
         this.scene.restart({
           targetMap: window.gameState.currentMapKey,
-          targetPoint: 'spawn_point' || {x: 100, y: 100},
+          targetPoint: 'spawn_point',
         })
       })
     })

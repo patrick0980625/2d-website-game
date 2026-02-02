@@ -23,7 +23,7 @@ const config = {
     default: 'matter',
     matter: {
       gravity: {y: 0},
-      debug: false,
+      debug: true,
     },
   },
   plugins: {

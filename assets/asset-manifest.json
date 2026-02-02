@@ -151,9 +151,34 @@
       "tiledName": "ts_dungeon_2"
     },
     {
+      "key": "img_dungeon_arch_s",
+      "path":"Dungeon_2_Arch_small.png",
+      "tiledName": "ts_dungeon_arch_s"
+    },
+    {
       "key": "img_dungeon_gate_anim",
       "path": "Dungeon_2_Gate_anim.png",
       "tiledName": "ts_dungeon_gate_anim"
+    },
+    {
+      "key": "img_dungeon_pillar",
+      "path": "Dungeon_2_Pillars.png",
+      "tiledName": "ts_dungeon_pillar"
+    },
+    {
+      "key": "img_dungeon_sewer",
+      "path": "Dungeon_2_Sewer_Tileset.png",
+      "tiledName": "ts_dungeon_sewer"
+    },
+    {
+      "key": "img_dungeon_sewer_anim",
+      "path": "Dungeon_2_Sewer_Anim.png",
+      "tiledName": "ts_dungeon_sewer_anim"
+    },
+    {
+      "key": "img_dungeon_stair",
+      "path": "Dungeon_2_Stairs.png",
+      "tiledName": "ts_dungeon_stair"
     },
     {
       "key": "img_farmland_d",
@@ -703,6 +728,18 @@
     {
       "key": "key",
       "path": "key.png",
+      "frameWidth": 16,
+      "frameHeight": 16
+    },
+    {
+      "key": "boss",
+      "path": "boss.png",
+      "frameWidth": 64,
+      "frameHeight": 64
+    },
+    {
+      "key": "broccoli",
+      "path": "broccoli.png",
       "frameWidth": 16,
       "frameHeight": 16
     }

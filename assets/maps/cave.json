@@ -828,6 +828,18 @@
                  "width":18,
                  "x":583,
                  "y":41
+                }, 
+                {
+                 "height":0,
+                 "id":62,
+                 "name":"spawn_point",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":32,
+                 "y":208
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -836,7 +848,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":62,
+ "nextobjectid":63,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
