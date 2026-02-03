@@ -54,7 +54,7 @@ export default class Boss extends Enemy {
             end: row * 10 + frameCount - 1,
           }),
           frameRate: 5,
-          repeat: 0,
+          repeat: (action === 'walk' || action === 'idle') ? -1 : 0,
         })
       }
     })
@@ -62,7 +62,10 @@ export default class Boss extends Enemy {
 
   update(time, delta) {
     if (this.isDead) {
-      this.setVelocity(0, 0);
+      if (this.body) {
+        this.setStatic(true);
+        this.setVelocity(0, 0);
+      }
       return;
     }
     if (this.isHurt) {
@@ -71,22 +74,23 @@ export default class Boss extends Enemy {
 
     this.setDepth(this.y + 10);
 
-    if(this.currentState === STATE.DASH || this.currentState === STATE.RETURNING) {
+    if (this.currentState === STATE.DASH || this.currentState === STATE.RETURNING) {
       this.setStatic(false);
     } else {
       this.setStatic(true);
       this.setVelocity(0, 0);
     }
 
-    if (this.currentState === STATE.IDLE && (this.y > this.spawnY + 100 || this.y > this.scene.player.y)) {
-      this.returnToTop();
-      return;
-    }
+    if (this.currentState === STATE.IDLE) {
+      if (this.y > this.spawnY + 100) {
+        this.returnToTop();
+        return;
+      }
 
-    if (this.currentState === STATE.IDLE && time > this.nextActionTime) {
-      this.decideNextMove();
+      if (time > this.nextActionTime) {
+        this.decideNextMove();
+      }
     }
-
     this.updateHealthBar();
   }
 
@@ -116,6 +120,14 @@ export default class Boss extends Enemy {
 
   decideNextMove() {
     if (this.isDead) {
+      return;
+    }
+
+    const player = this.scene.player;
+    const isPlayerAbove = player.y < this.y + 10;
+
+    if (isPlayerAbove) {
+      this.executeStomp();
       return;
     }
 
@@ -192,7 +204,7 @@ export default class Boss extends Enemy {
     graphics.fillCircleShape(circle);
 
     this.once('animationcomplete', () => {
-      if (this.isDead) {
+      if (this.isDead || !this.active) {
         graphics.destroy();
         return;
       }
@@ -287,12 +299,14 @@ export default class Boss extends Enemy {
     }
 
     this.isDead = true;
+    this.currentState = STATE.IDLE;
     this.setVelocity(0, 0);
     this.setSensor(true);
+    this.setStatic(true);
+    this.scene.tweens.killTweensOf(this);
 
     this.off('animationupdate');
     this.off('animationcomplete');
-    this.off('animationend');
 
     this.anims.play({key: 'boss-collapse', frameRate: 2}, true);
     this.scene.cameras.main.shake(500, 0.003);

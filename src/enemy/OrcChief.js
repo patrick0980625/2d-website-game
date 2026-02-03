@@ -61,14 +61,14 @@ export default class OrcChief extends Enemy {
             end: row * 8 + frameCount - 1,
           }),
           frameRate: action === 'collapse' ? 5 : 10,
-          repeat: 0,
+          repeat: (action === 'idle' || action === 'move') ? -1 : 0,
         })
       }
     })
   }
 
   update(time, delta) {
-    if (this.isDead || this.isHurt || this.isAttacking) {
+    if (this.isDead || this.isHurt || this.isAttacking || this.isReturning) {
       return;
     }
 
@@ -79,6 +79,13 @@ export default class OrcChief extends Enemy {
 
     this.setDepth(this.y + 10);
     const distance = Phaser.Math.Distance.Between(this.x, this.y, player.x, player.y);
+    const dFromSpawn = Phaser.Math.Distance.Between(this.x, this.y, this.spawnX, this.spawnY);
+
+    if (dFromSpawn > this.leashRange) {
+      this.startReturning();
+      return;
+    }
+
     this.updateDirection(player);
     const dirNames = {0: 'up', 1: 'side', 2: 'down', 3: 'side'};
     const dir = dirNames[this.direction] || 'down';
@@ -87,17 +94,6 @@ export default class OrcChief extends Enemy {
       this.isEncharge = true;
       this.setTint(0xff8888);
       this.speed = 1;
-    }
-
-    const dFromSpawn = Phaser.Math.Distance.Between(this.x, this.y, this.spawnX, this.spawnY);
-
-    if (dFromSpawn > this.leashRange) {
-      this.isReturning = true;
-    }
-
-    if (this.isReturning) {
-      this.returnSpawn();
-      return;
     }
 
     if (distance < this.detectRange) {
@@ -148,6 +144,10 @@ export default class OrcChief extends Enemy {
   }
 
   takeDamage(amount, knockback = null) {
+    if (this.isReturning) {
+      return;
+    }
+
     const defense = 0.8;
     if (this.isAttacking) {
       this.hp -= amount * defense;
@@ -168,36 +168,40 @@ export default class OrcChief extends Enemy {
     }
   }
 
-  returnSpawn() {
-    if (!this || !this.active || !this.body) {
+  startReturning() {
+    if (this.isReturning) {
       return;
     }
 
     this.isReturning = true;
-
-    if (typeof this.setTint === 'function') {
-      this.clearTint();
-    }
-
-    const dirNames = {0: 'up', 1: 'side', 2: 'down', 3: 'side'};
-    const dir = dirNames[this.direction] || 'down';
-
-    const angle = Phaser.Math.Angle.Between(this.x, this.y, this.spawnX, this.spawnY);
-    const vx = Math.cos(angle) * this.speed;
-    const vy = Math.sin(angle) * this.speed;
-    this.setVelocity(vx, vy);
-    this.anims.play(`orc-chief-move-${dir}`, true);
-    this.setFlipX(this.body.velocity.x < 0);
-    this.
+    this.setVelocity(0, 0);
+    this.setSensor(true);
     this.setTint(0xcccccc);
 
-    const dFromSpawn = Phaser.Math.Distance.Between(this.x, this.y, this.spawnX, this.spawnY);
-    if (dFromSpawn < 10) {
-      this.isReturning = false;
-      this.setVelocity(0, 0);
-      this.clearTint();
-      this.hp = Math.min(this.maxHp, this.hp + 5);
-    }
+    const angle = Phaser.Math.Angle.Between(this.x, this.y, this.spawnX, this.spawnY);
+    const dir = (Math.abs(Math.cos(angle)) > Math.abs(Math.sin(angle)) ? "side" : (Math.sin(angle) > 0 ? 'down' : 'up'));
+    this.dFromSpawn = Phaser.Math.Distance.Between(this.x, this.y, this.spawnX, this.spawnY);
+    this.pxPerSecond = this.speed * 60;
+    this.anims.play(`orc-chief-move-${dir}`, true);
+    this.setFlipX(Math.cos(angle) < 0);
+
+    this.scene.tweens.add({
+      targets: this,
+      x: this.spawnX,
+      y: this.spawnY,
+      duration: this.dFromSpawn / this.pxPerSecond * 1000,
+      ease: 'Linear',
+      onComplete: () => {
+        if (!this.active) {
+          return;
+        }
+        this.isReturning = false;
+        this.setSensor(false);
+        this.clearTint();
+        this.hp = Math.min(this.maxHp, this.hp + 10);
+        this.isEncharge = false;
+      }
+    })
   }
 
   die() {

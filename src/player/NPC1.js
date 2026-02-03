@@ -2,7 +2,7 @@ import NPC from './NPC.js';
 
 export default class NPC1 extends NPC {
   constructor(scene, x, y) {
-    super(scene, x, y, 'npc_1', 'We are controlled by the broccoli chicken!\nDefeated it to free us from farming!', "Thank you!\nBut I think I don't hate farming now.", 'James');
+    super(scene, x, y, 'npc_1', 'We are controlled by the broccoli chicken!\nDefeat it to free us from farming!', "Thank you!\nBut I think I don't hate farming now.", 'James');
 
     this.direction = 'side';
     this.flipX = true;

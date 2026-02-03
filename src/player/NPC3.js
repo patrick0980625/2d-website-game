@@ -2,7 +2,7 @@ import NPC from './NPC.js';
 
 export default class NPC3 extends NPC {
   constructor(scene, x, y) {
-    super(scene, x, y, 'npc_3', 'Do you know why do I look just like the person above me?\nBecause we are twins :)', "I just want to ...\n\nI don't know what to do.", "Kiki");
+    super(scene, x, y, 'npc_3', 'Do you know why I look just like the person above me?\nBecause we are twins :)', "I just want to ...\n\nI don't know what to do.", "Kiki");
 
     this.direction = 'side';
     this.flipX = false;

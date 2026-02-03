@@ -202,10 +202,10 @@
                 5
             ],
             "scale": 5.5,
-            "selectedLayer": 6,
+            "selectedLayer": 5,
             "viewCenter": {
                 "x": 532.8181818181819,
-                "y": 524.1818181818182
+                "y": 453.8181818181818
             }
         },
         "assets/maps/forest.json#ts_apple_tree": {
@@ -643,6 +643,9 @@
             "scaleInDock": 1
         },
         "assets/maps/village.json": {
+            "expandedObjectLayers": [
+                7
+            ],
             "scale": 11,
             "selectedLayer": 5,
             "viewCenter": {
@@ -824,11 +827,24 @@
     "map.tileWidth": 16,
     "map.width": 20,
     "openFiles": [
+        "assets/maps/initial_room.json",
+        "assets/maps/initial_map.json",
+        "assets/maps/castle_entrance.json",
+        "assets/maps/castle.json",
+        "assets/maps/forest.json",
+        "assets/maps/cave.json",
+        "assets/maps/village.json"
     ],
     "project": "2d-game.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "assets/maps/castle.json"
+        "assets/maps/initial_room.json",
+        "assets/maps/initial_map.json",
+        "assets/maps/castle_entrance.json",
+        "assets/maps/castle.json",
+        "assets/maps/village.json",
+        "assets/maps/cave.json",
+        "assets/maps/forest.json"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {
