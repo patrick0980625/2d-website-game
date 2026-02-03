@@ -760,6 +760,24 @@
       "path": "npc_3.png",
       "frameWidth": 64,
       "frameHeight": 64
+    },
+    {
+      "key": "startButton",
+      "path": "UI_Start_Button.png",
+      "frameWidth": 48,
+      "frameHeight": 16
+    },
+    {
+      "key": "cursor_normal",
+      "path": "cursor_normal.png",
+      "frameWidth": 16,
+      "frameHeight": 16
+    },
+    {
+      "key": "cursor_pointer",
+      "path": "cursor_pointer.png",
+      "frameWidth": 16,
+      "frameHeight": 16
     }
   ]
 }

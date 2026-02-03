@@ -94,6 +94,7 @@ export default class OrcChief extends Enemy {
       this.isEncharge = true;
       this.setTint(0xff8888);
       this.speed = 1;
+      this.attackCD = 3000;
     }
 
     if (distance < this.detectRange) {
@@ -125,7 +126,7 @@ export default class OrcChief extends Enemy {
 
         const d = Phaser.Math.Distance.Between(this.x, this.y, player.x, player.y);
         if (d < 40) {
-          player.takeDamage(3.5);
+          player.takeDamage(2.5);
 
           const pushAngle = Phaser.Math.Angle.Between(this.x, this.y, player.x, player.y);
           player.setVelocity(Math.cos(pushAngle) * 5, Math.sin(pushAngle) * 5);
@@ -206,6 +207,7 @@ export default class OrcChief extends Enemy {
 
   die() {
     window.gameState.isOrcDefeated = true;
+    window.gameState.hasKey = true;
     super.die();
     this.scene.events.emit('spawn-loot', {
       x: this.x,

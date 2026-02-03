@@ -44,6 +44,7 @@ export default class WorldScene extends Phaser.Scene {
     this.gateGroups = new Map();
     this.activePortal = null;
     this.scene.launch('UIScene');
+    let zoom = (this.scale.width > 800 && this.scale.height > 600) ? 5 : 3;
 
     // load map
     const map = this.make.tilemap({key: this.currentMapKey});
@@ -368,7 +369,6 @@ export default class WorldScene extends Phaser.Scene {
       const {width, height} = this.scale;
       const mapWidth = map.widthInPixels;
       const mapHeight = map.heightInPixels;
-      let zoom = (this.scale.width > 800 && this.scale.height > 600) ? 5 : 3;
       const displayWidth = mapWidth * zoom;
       const displayHeight = mapHeight * zoom;
       const boundsW = Math.max(mapWidth, width / zoom);

@@ -124,10 +124,16 @@ export default class Boss extends Enemy {
     }
 
     const player = this.scene.player;
-    const isPlayerAbove = player.y < this.y + 10;
+    const dist = Phaser.Math.Distance.Between(this.x, this.y, player.x, player.y);
+    const isPlayerAbove = (player.y < this.y - 10) && (dist < 50);
 
     if (isPlayerAbove) {
       this.executeStomp();
+      return;
+    }
+
+    if (player.y < this.y - 100) {
+      this.returnToTop();
       return;
     }
 
@@ -173,16 +179,23 @@ export default class Boss extends Enemy {
   executeCast() {
     this.currentState = STATE.CAST;
     this.setVelocity(0, 0);
-    this.anims.play({key: 'boss-cast', frameRate: 7}, true);
+    const angle = this.getConstrainedAngle();
+    this.showFireWarning(angle, 500);
 
-    this.off('animationupdate');
-    this.on('animationupdate', (anim, frame) => {
-      if (anim.key.includes('cast') && frame.index === 3) {
-        this.fire(this.scene.player);
-        this.off('animationupdate');
+    this.scene.time.delayedCall(500, () => {
+      if (this.isDead) {
+        return;
       }
-    })
+      this.anims.play({key: 'boss-cast', frameRate: 7}, true);
 
+      this.off('animationupdate');
+      this.on('animationupdate', (anim, frame) => {
+        if (anim.key.includes('cast') && frame.index === 3) {
+          this.fire(this.scene.player, angle);
+          this.off('animationupdate');
+        }
+      })
+    })
     this.once('animationcomplete', (anim) => {
       if (anim.key.includes('cast')) {
         this.stopAction();
@@ -195,25 +208,32 @@ export default class Boss extends Enemy {
     this.setVelocity(0, 0);
     this.anims.play({key: 'boss-jump', frameRate: 5}, true);
 
-    const stompRadius = 100;
-    const graphics = this.scene.add.graphics();
-    graphics.lineStyle(2, 0xff3333, 0.3);
-    graphics.fillStyle(0xff3333, 0.3);
+    const stompRadius = 90;
+    if (this.stompGraphics) {
+      this.stompGraphics.destroy();
+    }
+    this.stompGraphics = this.scene.add.graphics();
+
+    this.stompGraphics.lineStyle(2, 0xff3333, 0.3);
+    this.stompGraphics.fillStyle(0xff3333, 0.3);
     const circle = new Phaser.Geom.Circle(this.x, this.y, stompRadius);
-    graphics.strokeCircleShape(circle);
-    graphics.fillCircleShape(circle);
+    this.stompGraphics.strokeCircleShape(circle);
+    this.stompGraphics.fillCircleShape(circle);
 
     this.once('animationcomplete', () => {
-      if (this.isDead || !this.active) {
-        graphics.destroy();
+      if (this.stompGraphics) {
+        this.stompGraphics.destroy();
+        this.stompGraphics = null;
+      }
+
+      if (this.isDead) {
         return;
       }
 
       this.scene.cameras.main.shake(300, 0.003);
-      graphics.destroy();
       const dist = Phaser.Math.Distance.Between(this.x, this.y, this.scene.player.x, this.scene.player.y);
       if (dist < stompRadius) {
-        this.scene.player.takeDamage(2);
+        this.scene.player.takeDamage(3);
       }
       this.stopAction();
     })
@@ -238,16 +258,15 @@ export default class Boss extends Enemy {
     return Phaser.Math.Clamp(angle, 0.8, 2.3);
   }
 
-  fire(player) {
+  fire(player, angle) {
     if (!player || !player.body) {
       return;
     }
 
     const offset = 20;
-    const angle = this.getConstrainedAngle();
     const spawnX = this.x + Math.cos(angle) * offset;
     const spawnY = this.y + Math.sin(angle) * offset;
-    const arrow = new Broccoli(this.scene, spawnX, spawnY, angle, 2.25);
+    const arrow = new Broccoli(this.scene, spawnX, spawnY, angle, 2.5);
 
     if (this.scene.projectiles) {
       this.scene.projectiles.push(arrow);
@@ -294,6 +313,11 @@ export default class Boss extends Enemy {
   }
 
   die() {
+    if (this.stompGraphics) {
+      this.stompGraphics.destroy();
+      this.stompGraphics = null;
+    }
+
     if (this.isDead) {
       return;
     }
@@ -350,6 +374,30 @@ export default class Boss extends Enemy {
     graphics.fillRectShape(rect);
     graphics.strokeRectShape(rect);
     graphics.restore();
+
+    this.scene.time.delayedCall(duration, () => {
+      graphics.destroy();
+    })
+  }
+
+  showFireWarning(angle, duration) {
+    const lineLength = 200;
+    const graphics = this.scene.add.graphics();
+    graphics.lineStyle(2, 0xff3333, 0.5);
+    graphics.fillStyle(0xff3333, 0.5);
+
+    const destX = this.x + Math.cos(angle) * lineLength;
+    const destY = this.y + Math.sin(angle) * lineLength;
+
+    graphics.lineBetween(this.x, this.y, destX, destY);
+
+    this.scene.tweens.add({
+      targets: graphics,
+      alpha: 0,
+      duration: 100,
+      yoyo: true,
+      repeat: -1,
+    })
 
     this.scene.time.delayedCall(duration, () => {
       graphics.destroy();

@@ -89,6 +89,17 @@ export default class UIScene extends Phaser.Scene {
     if (WorldScene.player) {
       this.updateHP(WorldScene.player.hp, WorldScene.player.maxHp);
     }
+
+    // cursor
+    this.customCursor = this.add.sprite(this.input.x, this.input.y, 'cursor_normal')
+      .setOrigin(0, 0)
+      .setScale(4)
+      .setDepth(10000);
+
+    this.input.on('pointermove' , pointer => {
+      this.customCursor.x = pointer.x;
+      this.customCursor.y = pointer.y;
+    })
   }
 
   update() {

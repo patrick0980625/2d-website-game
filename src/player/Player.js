@@ -200,27 +200,6 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
   comboAttack() {
     const now = this.scene.time.now;
 
-    const pointer = this.scene.input.activePointer;
-    const mouseX = pointer.worldX;
-    const mouseY = pointer.worldY;
-
-    const angle = Phaser.Math.Angle.Between(this.x, this.y, mouseX, mouseY);
-    const degrees = Phaser.Math.RadToDeg(angle);
-
-    if (degrees > -45 && degrees <= 45) {
-      this.direction = 1;
-      this.flipX = false;
-    } else if (degrees > 45 && degrees <= 135) {
-      this.direction = 2;
-      this.flipX = false;
-    } else if (degrees > 135 || degrees <= -135) {
-      this.direction = 3;
-      this.flipX = true;
-    } else {
-      this.direction = 0;
-      this.flipX = false;
-    }
-
     if (now - this.lastAttack > this.comboTimeout) {
       this.combo = 1;
     }
@@ -243,8 +222,15 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
 
         const d = Phaser.Math.Distance.Between(this.x, this.y, e.x, e.y);
         if (d < attackRange) {
-          const damage = num === 3 ? 3 : 2;
-          e.takeDamage(damage, this);
+          const angleToEnemy = Phaser.Math.Angle.Between(this.x, this.y, e.x, e.y);
+          const dirAngle = {0: -Math.PI / 2, 1: 0, 2: Math.PI / 2, 3: Math.PI};
+          const playerAngle = dirAngle[this.direction];
+
+          let diff = Phaser.Math.Angle.Wrap(angleToEnemy - playerAngle);
+          if (Math.abs(diff) <= Math.PI / 1.5) {
+            const damage = num === 3 ? 3 : 2;
+            e.takeDamage(damage, this);
+          }
         }
       })
     }

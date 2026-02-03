@@ -3,6 +3,7 @@ import AnimatedTiles from 'phaser-animated-tiles';
 import PreloadScene from './scenes/PreloadScene.js';
 import WorldScene from './scenes/WorldScene.js';
 import UIScene from "./scenes/UIScene.js";
+import TitleScene from './scenes/TitleScene.js';
 
 /** @type {Phaser.Types.Core.GameConfig} */
 const config = {
@@ -35,7 +36,7 @@ const config = {
       }
     ]
   },
-  scene: [PreloadScene, WorldScene, UIScene]
+  scene: [PreloadScene,TitleScene, WorldScene, UIScene]
 }
 
 const game = new Phaser.Game(config);
