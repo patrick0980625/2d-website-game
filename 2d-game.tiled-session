@@ -367,10 +367,10 @@
                 11
             ],
             "scale": 5.5,
-            "selectedLayer": 6,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 267.72727272727275,
-                "y": 251.09090909090912
+                "x": 67.18181818181817,
+                "y": 157.27272727272725
             }
         },
         "assets/maps/initial_map.json#ts_beach": {
@@ -643,11 +643,11 @@
             "scaleInDock": 1
         },
         "assets/maps/village.json": {
-            "scale": 1.32703125,
-            "selectedLayer": 0,
+            "scale": 11,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 319.88696573648883,
-                "y": 320.26374661485926
+                "x": 544.1363636363636,
+                "y": 510
             }
         },
         "assets/maps/village.json#ts_bench": {

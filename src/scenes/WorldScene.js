@@ -5,6 +5,9 @@ import GoblinMaceman from "../enemy/GoblinMaceman.js";
 import OrcChief from "../enemy/OrcChief.js";
 import Slime from "../enemy/Slime.js";
 import Boss from "../enemy/Boss.js";
+import NPC1 from "../player/NPC1.js";
+import NPC2 from "../player/NPC2.js";
+import NPC3 from "../player/NPC3.js";
 
 if (!window.gameState) {
   window.gameState = {
@@ -191,8 +194,12 @@ export default class WorldScene extends Phaser.Scene {
     OrcChief.createAnimations(this);
     Slime.createAnimations(this);
     Boss.createAnimations(this);
+    NPC1.createAnimations(this);
+    NPC2.createAnimations(this);
+    NPC3.createAnimations(this);
     this.enemies = [];
     this.projectiles = [];
+    this.npcs = [];
 
     const enemy = map.getObjectLayer('enemy');
     if (enemy) {
@@ -223,6 +230,17 @@ export default class WorldScene extends Phaser.Scene {
             const boss = new Boss(this, obj.x, obj.y);
             this.enemies.push(boss);
             window.gameState.isBossFighting = true;
+          }
+        } else if (obj.name === 'npc') {
+          if (obj.type === '1') {
+            const npc = new NPC1(this, obj.x, obj.y);
+            this.npcs.push(npc);
+          } else if (obj.type === '2') {
+            const npc = new NPC2(this, obj.x, obj.y);
+            this.npcs.push(npc);
+          } else if (obj.type === '3') {
+            const npc = new NPC3(this, obj.x, obj.y);
+            this.npcs.push(npc);
           }
         }
       })
@@ -281,6 +299,24 @@ export default class WorldScene extends Phaser.Scene {
 
     // player interact
     this.events.on('player-interact', (player) => {
+      let closestNPC = null;
+      let minDist = 40;
+
+      this.npcs.forEach(npc => {
+        const d = Phaser.Math.Distance.Between(player.x, player.y, npc.x, npc.y);
+        if (d < minDist) {
+          minDist = d;
+          closestNPC = npc;
+        }
+      })
+
+      if (closestNPC) {
+        this.events.emit('show-dialog', {
+          name: closestNPC.npcName,
+          text: closestNPC.getDialog(),
+        });
+      }
+
       if (this.activePortal) {
         const data = this.activePortal.portalData;
 
@@ -416,6 +452,12 @@ export default class WorldScene extends Phaser.Scene {
       }
     })
     this.enemies = this.enemies.filter(e => e.active);
+
+    this.npcs.forEach(npc => {
+      if (npc.active) {
+        npc.update(time, delta);
+      }
+    })
 
     // projectiles
     this.projectiles = this.projectiles.filter(p => p.active);

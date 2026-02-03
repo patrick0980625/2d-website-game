@@ -835,7 +835,7 @@
                  "name":"spawn_point",
                  "point":true,
                  "rotation":0,
-                 "type":"",
+                 "type":"teleport_point",
                  "visible":true,
                  "width":0,
                  "x":32,

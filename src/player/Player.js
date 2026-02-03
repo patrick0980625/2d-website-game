@@ -356,7 +356,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     }
 
     if (this.currentState === STATE.DODGE) {
-      const finalDamage = Math.ceil(amount * 0.6);
+      const finalDamage = Math.ceil(amount * 0.2);
       this.hp -= finalDamage;
       this.triggerHurtEffect();
       return;
@@ -407,6 +407,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         this.scene.events.emit('player-hp-changed', this.hp, this.maxHp);
         this.setTint(0x00ff00);
         this.scene.time.delayedCall(200, () => this.clearTint());
+        window.gameState.playerHp = this.hp;
       }
     }
   }

@@ -3710,6 +3710,30 @@
                  "width":0,
                  "x":576,
                  "y":192
+                }, 
+                {
+                 "height":0,
+                 "id":490,
+                 "name":"slime",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":605,
+                 "y":490
+                }, 
+                {
+                 "height":0,
+                 "id":491,
+                 "name":"slime",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":593,
+                 "y":431
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -3806,7 +3830,7 @@
                  "name":"spawn_point",
                  "point":true,
                  "rotation":0,
-                 "type":"",
+                 "type":"teleport_point",
                  "visible":true,
                  "width":0,
                  "x":480,
@@ -3819,7 +3843,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":490,
+ "nextobjectid":492,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

@@ -6422,7 +6422,43 @@
          "draworder":"topdown",
          "id":7,
          "name":"enemy",
-         "objects":[],
+         "objects":[
+                {
+                 "height":0,
+                 "id":617,
+                 "name":"npc",
+                 "point":true,
+                 "rotation":0,
+                 "type":"1",
+                 "visible":true,
+                 "width":0,
+                 "x":80,
+                 "y":464
+                }, 
+                {
+                 "height":0,
+                 "id":618,
+                 "name":"npc",
+                 "point":true,
+                 "rotation":0,
+                 "type":"2",
+                 "visible":true,
+                 "width":0,
+                 "x":544,
+                 "y":448
+                }, 
+                {
+                 "height":0,
+                 "id":619,
+                 "name":"npc",
+                 "point":true,
+                 "rotation":0,
+                 "type":"3",
+                 "visible":true,
+                 "width":0,
+                 "x":528,
+                 "y":512
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -6714,7 +6750,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":617,
+ "nextobjectid":620,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

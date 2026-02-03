@@ -129,7 +129,7 @@ export default class OrcChief extends Enemy {
 
         const d = Phaser.Math.Distance.Between(this.x, this.y, player.x, player.y);
         if (d < 40) {
-          player.takeDamage(5);
+          player.takeDamage(3.5);
 
           const pushAngle = Phaser.Math.Angle.Between(this.x, this.y, player.x, player.y);
           player.setVelocity(Math.cos(pushAngle) * 5, Math.sin(pushAngle) * 5);
@@ -172,6 +172,8 @@ export default class OrcChief extends Enemy {
     if (!this || !this.active || !this.body) {
       return;
     }
+
+    this.isReturning = true;
 
     if (typeof this.setTint === 'function') {
       this.clearTint();

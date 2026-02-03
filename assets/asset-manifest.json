@@ -152,7 +152,7 @@
     },
     {
       "key": "img_dungeon_arch_s",
-      "path":"Dungeon_2_Arch_small.png",
+      "path": "Dungeon_2_Arch_small.png",
       "tiledName": "ts_dungeon_arch_s"
     },
     {
@@ -646,7 +646,7 @@
       "path": "castle.json"
     }
   ],
-  "sprites" : [
+  "sprites": [
     {
       "key": "player",
       "path": "sprite-sheet.png",
@@ -742,6 +742,24 @@
       "path": "broccoli.png",
       "frameWidth": 16,
       "frameHeight": 16
+    },
+    {
+      "key": "npc_1",
+      "path": "npc_1.png",
+      "frameWidth": 64,
+      "frameHeight": 64
+    },
+    {
+      "key": "npc_2",
+      "path": "npc_2.png",
+      "frameWidth": 64,
+      "frameHeight": 64
+    },
+    {
+      "key": "npc_3",
+      "path": "npc_3.png",
+      "frameWidth": 64,
+      "frameHeight": 64
     }
   ]
 }
