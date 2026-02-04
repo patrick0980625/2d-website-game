@@ -17,6 +17,7 @@ if (!window.gameState) {
     isBossFighting: false,
     isBossDefeated : false,
     playerHp: 20,
+    playerDeathCount: 0,
   };
 }
 
@@ -524,6 +525,8 @@ export default class WorldScene extends Phaser.Scene {
       }
     })
 
+
+    window.gameState.playerDeathCount++;
     this.cameras.main.flash(500, 255, 0, 0);
     this.time.delayedCall(1000, () => {
       this.cameras.main.fadeOut(1000, 0, 0, 0);

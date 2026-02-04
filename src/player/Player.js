@@ -34,7 +34,7 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
     this.lastDamageTime = 0;
     this.recoveryRate = 2000;
     this.lastRecoveryTime = 0;
-    this.recoveryDelay = 10000;
+    this.recoveryDelay = 7000;
     this.recoveryAmount = 2;
 
     this.cursors = scene.input.keyboard.createCursorKeys();
@@ -228,7 +228,8 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
 
           let diff = Phaser.Math.Angle.Wrap(angleToEnemy - playerAngle);
           if (Math.abs(diff) <= Math.PI / 1.5) {
-            const damage = num === 3 ? 3 : 2;
+            let damage = num === 3 ? 3 : 2;
+            damage += window.gameState.playerDeathCount / 8;
             e.takeDamage(damage, this);
           }
         }

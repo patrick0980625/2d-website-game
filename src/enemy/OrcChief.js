@@ -126,7 +126,7 @@ export default class OrcChief extends Enemy {
 
         const d = Phaser.Math.Distance.Between(this.x, this.y, player.x, player.y);
         if (d < 40) {
-          player.takeDamage(2.5);
+          player.takeDamage(2);
 
           const pushAngle = Phaser.Math.Angle.Between(this.x, this.y, player.x, player.y);
           player.setVelocity(Math.cos(pushAngle) * 5, Math.sin(pushAngle) * 5);
