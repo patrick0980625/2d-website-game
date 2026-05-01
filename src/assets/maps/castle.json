@@ -1,0 +1,504 @@
+{ "compressionlevel":-1,
+ "height":22,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            159, 162, 162, 160, 161, 160, 160, 160, 160, 161, 160, 160, 160, 161, 162, 161, 162, 160, 162, 163,
+            172, 222, 174, 174, 174, 174, 174, 174, 174, 174, 174, 174, 174, 174, 174, 174, 222, 174, 175, 176,
+            172, 186, 165, 166, 166, 166, 166, 166, 166, 166, 166, 166, 166, 166, 166, 166, 166, 169, 188, 202,
+            198, 186, 188, 11, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 13, 208, 188, 189,
+            185, 186, 188, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 208, 188, 176,
+            198, 186, 188, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 208, 188, 202,
+            185, 186, 188, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 208, 188, 176,
+            172, 186, 188, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 208, 188, 202,
+            185, 186, 188, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 208, 188, 176,
+            198, 186, 188, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 208, 188, 202,
+            185, 186, 188, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 208, 188, 189,
+            172, 186, 188, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 208, 188, 202,
+            172, 186, 188, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 208, 188, 189,
+            185, 186, 188, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 208, 188, 189,
+            172, 186, 188, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 208, 188, 176,
+            185, 186, 188, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 208, 188, 189,
+            185, 186, 188, 37, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 39, 208, 188, 176,
+            198, 186, 217, 218, 174, 174, 174, 174, 174, 273, 275, 174, 174, 174, 174, 174, 174, 221, 188, 202,
+            185, 199, 200, 200, 200, 200, 200, 200, 200, 276, 278, 200, 200, 200, 200, 200, 200, 200, 201, 202,
+            211, 212, 212, 212, 212, 212, 212, 212, 181, 279, 281, 179, 180, 180, 180, 180, 180, 180, 180, 215],
+         "height":22,
+         "id":1,
+         "name":"ground",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[246, 246, 250, 246, 246, 250, 246, 246, 250, 246, 246, 251, 246, 246, 251, 246, 246, 251, 246, 246,
+            253, 253, 257, 253, 253, 257, 253, 253, 257, 253, 253, 258, 253, 253, 258, 253, 253, 258, 253, 253,
+            260, 260, 264, 260, 260, 264, 260, 260, 264, 260, 260, 265, 260, 260, 265, 260, 260, 265, 260, 260,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":22,
+         "id":2,
+         "name":"aboveGround",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":22,
+         "id":3,
+         "name":"shadow",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"deco",
+         "objects":[
+                {
+                 "gid":242,
+                 "height":16,
+                 "id":1,
+                 "name":"pillar_1",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":128,
+                 "y":352
+                }, 
+                {
+                 "gid":239,
+                 "height":16,
+                 "id":2,
+                 "name":"pillar_1",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":128,
+                 "y":336
+                }, 
+                {
+                 "gid":236,
+                 "height":16,
+                 "id":3,
+                 "name":"pillar_1",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":128,
+                 "y":320
+                }, 
+                {
+                 "gid":243,
+                 "height":16,
+                 "id":4,
+                 "name":"pilllar_2",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":176,
+                 "y":352
+                }, 
+                {
+                 "gid":240,
+                 "height":16,
+                 "id":5,
+                 "name":"pilllar_2",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":176,
+                 "y":336
+                }, 
+                {
+                 "gid":237,
+                 "height":16,
+                 "id":6,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":176,
+                 "y":320
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"collision",
+         "objects":[
+                {
+                 "height":80,
+                 "id":7,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":320,
+                 "x":0,
+                 "y":0
+                }, 
+                {
+                 "height":272,
+                 "id":8,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":0,
+                 "y":80
+                }, 
+                {
+                 "height":272,
+                 "id":9,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":272,
+                 "y":80
+                }, 
+                {
+                 "height":48,
+                 "id":10,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":103,
+                 "x":48,
+                 "y":304
+                }, 
+                {
+                 "height":48,
+                 "id":11,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":103,
+                 "x":169,
+                 "y":304
+                }, 
+                {
+                 "height":9,
+                 "id":12,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":18,
+                 "x":151,
+                 "y":343
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":7,
+         "name":"enemy",
+         "objects":[
+                {
+                 "height":0,
+                 "id":13,
+                 "name":"boss",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":160,
+                 "y":112
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":8,
+         "name":"teleport",
+         "objects":[
+                {
+                 "height":7,
+                 "id":14,
+                 "name":"to_castle_entrance",
+                 "properties":[
+                        {
+                         "name":"is_door",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"is_locked",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"target_map",
+                         "type":"string",
+                         "value":"castle_entrance_data"
+                        }, 
+                        {
+                         "name":"target_point",
+                         "type":"string",
+                         "value":"from_castle"
+                        }],
+                 "rotation":0,
+                 "type":"portal",
+                 "visible":true,
+                 "width":18,
+                 "x":151,
+                 "y":336
+                }, 
+                {
+                 "height":0,
+                 "id":16,
+                 "name":"from_castle_entrance",
+                 "point":true,
+                 "rotation":0,
+                 "type":"teleport_point",
+                 "visible":true,
+                 "width":0,
+                 "x":160,
+                 "y":320
+                }, 
+                {
+                 "height":0,
+                 "id":17,
+                 "name":"spawn_point",
+                 "point":true,
+                 "rotation":0,
+                 "type":"teleport_point",
+                 "visible":true,
+                 "width":0,
+                 "x":160,
+                 "y":304
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":9,
+ "nextobjectid":18,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.11.2",
+ "tileheight":16,
+ "tilesets":[
+        {
+         "columns":13,
+         "firstgid":1,
+         "image":"..\/tilesets\/images\/Dungeon_2.png",
+         "imageheight":192,
+         "imagewidth":208,
+         "margin":0,
+         "name":"ts_dungeon_2",
+         "spacing":0,
+         "tilecount":156,
+         "tileheight":16,
+         "tilewidth":16
+        }, 
+        {
+         "columns":13,
+         "firstgid":157,
+         "image":"..\/tilesets\/images\/Dungeon_2_Sewer_Tileset.png",
+         "imageheight":80,
+         "imagewidth":208,
+         "margin":0,
+         "name":"ts_dungeon_sewer",
+         "spacing":0,
+         "tilecount":65,
+         "tileheight":16,
+         "tilewidth":16
+        }, 
+        {
+         "columns":14,
+         "firstgid":222,
+         "image":"..\/tilesets\/images\/Dungeon_2_Sewer_Anim.png",
+         "imageheight":16,
+         "imagewidth":224,
+         "margin":0,
+         "name":"ts_dungeon_sewer_anim",
+         "spacing":0,
+         "tilecount":14,
+         "tileheight":16,
+         "tiles":[
+                {
+                 "animation":[
+                        {
+                         "duration":100,
+                         "tileid":0
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":1
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":2
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":3
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":4
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":5
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":6
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":7
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":8
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":9
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":10
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":11
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":12
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":13
+                        }],
+                 "id":0
+                }],
+         "tilewidth":16
+        }, 
+        {
+         "columns":3,
+         "firstgid":236,
+         "image":"..\/tilesets\/images\/Dungeon_2_Pillars.png",
+         "imageheight":48,
+         "imagewidth":48,
+         "margin":0,
+         "name":"ts_dungeon_pillar",
+         "spacing":0,
+         "tilecount":9,
+         "tileheight":16,
+         "tilewidth":16
+        }, 
+        {
+         "columns":7,
+         "firstgid":245,
+         "image":"..\/tilesets\/images\/Dungeon_2_Arch_small.png",
+         "imageheight":64,
+         "imagewidth":112,
+         "margin":0,
+         "name":"ts_dungeon_arch_s",
+         "spacing":0,
+         "tilecount":28,
+         "tileheight":16,
+         "tilewidth":16
+        }, 
+        {
+         "columns":3,
+         "firstgid":273,
+         "image":"..\/tilesets\/images\/Dungeon_2_Stairs.png",
+         "imageheight":48,
+         "imagewidth":48,
+         "margin":0,
+         "name":"ts_dungeon_stair",
+         "spacing":0,
+         "tilecount":9,
+         "tileheight":16,
+         "tilewidth":16
+        }],
+ "tilewidth":16,
+ "type":"map",
+ "version":"1.10",
+ "width":20
+}

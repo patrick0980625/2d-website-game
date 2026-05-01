@@ -1,0 +1,25 @@
+{
+  "name": "2d-website-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patrick0980625/2d-website-game.git"
+  },
+  "private": true,
+  "dependencies": {
+    "npm": "^11.7.0",
+    "phaser": "^3.90.0",
+    "phaser-animated-tiles": "github:nkholski/phaser-animated-tiles",
+    "phaser3": "^0.4.34"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}
