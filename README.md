@@ -5,7 +5,7 @@ This repository is just the code, because the texture is bought from itch.io, an
 ## Introduction
 
 The game is about 5 minutes long, with a final boss to defeat.
-You cannot play the game through these files, since the incomplete of texture.
+You cannot play the game through these files, since the incompletion of texture.
 
 There are some enemies and npcs in the game
 - Goblin Archer
@@ -52,5 +52,5 @@ Maps are made with TileMapEditor
 
 ### License
 
-No license conclude, you can change any part of the coding, making a new game
+No license conclude, you can change any part of the coding, or make a new game.
 Thanks for Kenmis's texture pack : https://itch.io/s/175405/kenmis-winter-sale-2025
